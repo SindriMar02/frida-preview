@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://fridaskart.is/</loc>
-    <xhtml:link rel="alternate" hreflang="is" href="https://fridaskart.is/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fridaskart.is/en/"/>
+  <url><loc>https://sindrimar02.github.io/frida-preview/</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://sindrimar02.github.io/frida-preview/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sindrimar02.github.io/frida-preview/en/"/>
   </url>
-  <url><loc>https://fridaskart.is/en/</loc>
-    <xhtml:link rel="alternate" hreflang="is" href="https://fridaskart.is/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://fridaskart.is/en/"/>
+  <url><loc>https://sindrimar02.github.io/frida-preview/en/</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://sindrimar02.github.io/frida-preview/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sindrimar02.github.io/frida-preview/en/"/>
   </url>
 </urlset>
