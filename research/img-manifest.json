@@ -1,0 +1,62 @@
+{
+ "ch-celts": {
+  "title": "Celts & Kings Bracelet - 2 small Celtic Brooches - Gold",
+  "price": 53000.0,
+  "src": "https://cdn.shopify.com/s/files/1/0258/9097/9892/products/fullsizeoutput_2a92.jpg",
+  "w": 1800,
+  "h": 1800
+ },
+ "ch-comb": {
+  "title": "Celts & Kings Ring - Comb - Gold - smaller",
+  "price": 99000.0,
+  "src": "https://cdn.shopify.com/s/files/1/0258/9097/9892/products/fullsizeoutput_2a87.jpg",
+  "w": 1800,
+  "h": 1800
+ },
+ "ch-creatures": {
+  "title": "Creatures - Mermaid Necklace - Medium 2,3 cm - Silver",
+  "price": 11500.0,
+  "src": "https://cdn.shopify.com/s/files/1/0258/9097/9892/files/IMG_1443.jpg",
+  "w": 1800,
+  "h": 1800
+ },
+ "ch-traveler": {
+  "title": "The Traveler - Hoop earrings - Oxidised silver and bronze w/ pearl",
+  "price": 31500.0,
+  "src": "https://cdn.shopify.com/s/files/1/0258/9097/9892/files/IMG_0861.jpg",
+  "w": 1800,
+  "h": 2400
+ },
+ "ch-acanthus": {
+  "title": "Acanthus Necklace - Small Acanthus Pendant - Gold",
+  "price": 34000.0,
+  "src": "https://cdn.shopify.com/s/files/1/0258/9097/9892/products/fullsizeoutput_2a73.jpg",
+  "w": 1800,
+  "h": 1800
+ },
+ "ch-knitting": {
+  "title": "Knitting Ring - Slant Medium Stitch - Gold",
+  "price": 320000.0,
+  "src": "https://cdn.shopify.com/s/files/1/0258/9097/9892/products/fullsizeoutput_2a79.jpg",
+  "w": 1800,
+  "h": 1800
+ },
+ "studio-silver": {
+  "source": "homepage/IMG_2276.jpg",
+  "w": 2400,
+  "h": 1600,
+  "shows": "pile of silver rings"
+ },
+ "studio-gold": {
+  "source": "homepage/IMG_0943.jpg",
+  "w": 2400,
+  "h": 1600,
+  "shows": "curve of gold rings"
+ },
+ "studio-bracelet": {
+  "source": "homepage/IMG_4504.jpg",
+  "w": 2400,
+  "h": 1599,
+  "shows": "bracelet and rings"
+ }
+}

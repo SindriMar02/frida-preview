@@ -1,0 +1,3336 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8" />
+
+    
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+
+
+<meta property="og:site_name" content="FríðaSkart">
+<meta property="og:url" content="https://fridaskart.is/">
+<meta property="og:title" content="FríðaSkart">
+<meta property="og:type" content="website">
+<meta property="og:description" content="FríðaSkart">
+
+
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FríðaSkart">
+<meta name="twitter:description" content="FríðaSkart">
+
+
+    <!-- SEO
+  ================================================== -->
+  <title>
+    FríðaSkart
+  </title>
+  
+  <link rel="canonical" href="https://fridaskart.is/" />
+
+    <!-- CSS
+  ================================================== -->
+
+  <link href="//fridaskart.is/cdn/shop/t/2/assets/stylesheet.css?v=24106917388770413001767802084" rel="stylesheet" type="text/css" media="all" />
+  <link href="//fridaskart.is/cdn/shop/t/2/assets/queries.css?v=151141600993713820421566303953" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- JS
+  ================================================== -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+  <script src="//unpkg.com/eventemitter3@4.0.7/umd/eventemitter3.min.js" type="text/javascript"></script>
+
+  
+    <script src="//fridaskart.is/cdn/s/javascripts/currencies.js" type="text/javascript"></script>
+<script src="//fridaskart.is/cdn/shop/t/2/assets/jquery.currencies.min.js?v=30321906837909522691566303940" type="text/javascript"></script>
+
+<script>
+
+Currency.format = 'money_with_currency_format';
+var shopCurrency = 'ISK';
+
+/* Sometimes merchants change their shop currency, let's tell our JavaScript file */
+Currency.moneyFormats[shopCurrency].money_with_currency_format = "{{amount_no_decimals}} ISK";
+Currency.moneyFormats[shopCurrency].money_format = "{{amount_no_decimals}} kr";
+
+/* Default currency */
+var defaultCurrency = 'ISK';
+
+/* Cookie currency */
+var cookieCurrency = Currency.cookie.read();
+
+$( document ).ready(function() {
+  /* Fix for customer account pages */
+  jQuery('span.money span.money').each(function() {
+    jQuery(this).parents('span.money').removeClass('money');
+  });
+
+  /* Saving the current price */
+  jQuery('span.money').each(function() {
+    jQuery(this).attr('data-currency-ISK', jQuery(this).html());
+  });
+
+  // If there's no cookie.
+  if (cookieCurrency == null) {
+    if (shopCurrency !== defaultCurrency) {
+      Currency.convertAll(shopCurrency, defaultCurrency);
+    }
+    else {
+      Currency.currentCurrency = defaultCurrency;
+    }
+  }
+  // If the cookie value does not correspond to any value in the currency dropdown.
+  else if (jQuery('[name=currencies]').size() && jQuery('[name=currencies] option[value=' + cookieCurrency + ']').size() === 0) {
+    Currency.currentCurrency = shopCurrency;
+    Currency.cookie.write(shopCurrency);
+  }
+  // If the cookie value is the same as the shop currency set in settings.
+  else if (cookieCurrency === shopCurrency) {
+    Currency.currentCurrency = shopCurrency;
+  }
+  // If the cookie currency is different than the shop currency.
+  else {
+    Currency.currentCurrency = cookieCurrency || ISK;
+  }
+
+  // Update (on load) the currency shown in currency picker to currentCurrrency.
+  jQuery('[name=currencies]').val(Currency.currentCurrency).change(function() {
+    var newCurrency = jQuery(this).val();
+
+    Currency.convertAll(Currency.currentCurrency, newCurrency);
+  });
+
+  // Convert all currencies with span.money to currentCurrrency on doc.ready load.
+  Currency.convertAll(shopCurrency, Currency.currentCurrency);
+});
+
+</script>
+
+  
+
+  <script src="//fridaskart.is/cdn/shop/t/2/assets/theme.js?v=184029576684242486491733406412" type="text/javascript"></script>
+  <script src="//fridaskart.is/cdn/shopifycloud/storefront/assets/themes_support/option_selection-b017cd28.js" type="text/javascript"></script>
+  <script src="//fridaskart.is/cdn/shop/t/2/assets/instafeed.js?v=58777072800108370171566303940" type="text/javascript"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start');</script><meta id="shopify-digital-wallet" name="shopify-digital-wallet" content="/25890979892/digital_wallets/dialog">
+<script async="async" src="/checkouts/internal/preloads.js?locale=en-IS"></script>
+<script id="shopify-features" type="application/json">{"accessToken":"0a9d8e8af5cc4baa44853ea53586f830","betas":["rich-media-storefront-analytics"],"domain":"fridaskart.is","predictiveSearch":true,"shopId":25890979892,"locale":"en"}</script>
+<script>var Shopify = Shopify || {};
+Shopify.shop = "fridaskart.myshopify.com";
+Shopify.locale = "en";
+Shopify.currency = {"active":"ISK","rate":"1.0"};
+Shopify.country = "IS";
+Shopify.theme = {"name":"Icon","id":76013174836,"schema_name":"Icon","schema_version":"6.6.3","theme_store_id":686,"role":"main"};
+Shopify.theme.handle = "null";
+Shopify.theme.style = {"id":null,"handle":null};
+Shopify.cdnHost = "fridaskart.is/cdn";
+Shopify.routes = Shopify.routes || {};
+Shopify.routes.root = "/";
+Shopify.shopJsCdnBaseUrl = "https://cdn.shopify.com/shopifycloud/shop-js";
+Shopify.SignInWithShop = Shopify.SignInWithShop || {};
+Shopify.SignInWithShop.User = Shopify.SignInWithShop.User || {};
+Shopify.SignInWithShop.User.recognized = false;</script>
+<script type="module">!function(o){(o.Shopify=o.Shopify||{}).modules=!0}(window);</script>
+<script>!function(o){function n(){var o=[];function n(){o.push(Array.prototype.slice.apply(arguments))}return n.q=o,n}var t=o.Shopify=o.Shopify||{};t.loadFeatures=n(),t.autoloadFeatures=n()}(window);</script>
+<script>
+  window.Shopify = window.Shopify || {};
+  window.Shopify.SignInWithShop = window.Shopify.SignInWithShop || {};
+  window.Shopify.SignInWithShop.assetMetrics = { sampleRate: 0.25 };
+  window.Shopify.SignInWithShop.eligible = true;
+</script>
+<script id="shop-js-analytics" type="application/json">{"pageType":"index"}</script>
+<script defer="defer" async type="module" src="//fridaskart.is/cdn/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.en.esm.js"></script>
+<script type="module">
+  await import("//fridaskart.is/cdn/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.en.esm.js");
+
+  window.Shopify.SignInWithShop?.initShopCartSync?.({"fedCMEnabled":true,"windoidEnabled":true});
+
+</script>
+<script>
+  window.Shopify = window.Shopify || {};
+  if (!window.Shopify.featureAssets) window.Shopify.featureAssets = {};
+  window.Shopify.featureAssets['shop-js'] = {"shop-toast-manager":["modules/v2/loader.shop-toast-manager.en.esm.js"],"init-shop-user-recognition":["modules/v2/loader.init-shop-user-recognition.en.esm.js"],"listener":["modules/v2/loader.listener.en.esm.js"],"init-fed-cm":["modules/v2/loader.init-fed-cm.en.esm.js"],"init-windoid":["modules/v2/loader.init-windoid.en.esm.js"],"shop-cash-offers":["modules/v2/loader.shop-cash-offers.en.esm.js"],"init-shop-email-lookup-coordinator":["modules/v2/loader.init-shop-email-lookup-coordinator.en.esm.js"],"shop-button":["modules/v2/loader.shop-button.en.esm.js"],"init-shop-cart-sync":["modules/v2/loader.init-shop-cart-sync.en.esm.js"],"avatar":["modules/v2/loader.avatar.en.esm.js"],"shop-user-recognition":["modules/v2/loader.shop-user-recognition.en.esm.js"],"shop-login-button":["modules/v2/loader.shop-login-button.en.esm.js"],"init-shop-for-new-customer-accounts":["modules/v2/loader.init-shop-for-new-customer-accounts.en.esm.js"],"shop-cart-sync":["modules/v2/loader.shop-cart-sync.en.esm.js"],"shop-login":["modules/v2/loader.shop-login.en.esm.js"],"init-customer-accounts-sign-up":["modules/v2/loader.init-customer-accounts-sign-up.en.esm.js"],"pay-button":["modules/v2/loader.pay-button.en.esm.js"],"init-customer-accounts":["modules/v2/loader.init-customer-accounts.en.esm.js"],"checkout-modal":["modules/v2/loader.checkout-modal.en.esm.js"],"shop-follow-button":["modules/v2/loader.shop-follow-button.en.esm.js"],"lead-capture":["modules/v2/loader.lead-capture.en.esm.js"],"payment-terms":["modules/v2/loader.payment-terms.en.esm.js"]};
+</script>
+<script id="__st">var __st={"a":25890979892,"offset":0,"reqid":"c28a92aa-0a65-4cd3-acc9-70c67b3a0b10-1786412695","pageurl":"fridaskart.is\/","u":"d2d4f53fc0a7","p":"home"};</script>
+<script>window.ShopifyPaypalV4VisibilityTracking = true;</script>
+<script id="captcha-bootstrap">!function(){'use strict';const t='contact',e='account',n='new_comment',o=[[t,t],['blogs',n],['comments',n],[t,'customer']],c=[[e,'customer_login'],[e,'guest_login'],[e,'recover_customer_password'],[e,'create_customer']],r=t=>t.map((([t,e])=>`form[action*='/${t}']:not([data-nocaptcha='true']) input[name='form_type'][value='${e}']`)).join(','),a=t=>()=>t?[...document.querySelectorAll(t)].map((t=>t.form)):[];function s(){const t=[...o],e=r(t);return a(e)}const i='password',u='form_key',d=['recaptcha-v3-token','g-recaptcha-response','h-captcha-response',i],f=()=>{try{return window.sessionStorage}catch{return}},m='__shopify_v',_=t=>t.elements[u];function p(t,e,n=!1){try{const o=window.sessionStorage,c=JSON.parse(o.getItem(e)),{data:r}=function(t){const{data:e,action:n}=t;return t[m]||n?{data:e,action:n}:{data:t,action:n}}(c);for(const[e,n]of Object.entries(r))t.elements[e]&&(t.elements[e].value=n);n&&o.removeItem(e)}catch(o){console.error('form repopulation failed',{error:o})}}const l='form_type',E='cptcha';function T(t){t.dataset[E]=!0}const w=window,h=w.document,L='Shopify',v='ce_forms',y='captcha';let A=!1;((t,e)=>{const n=(g='f06e6c50-85a8-45c8-87d0-21a2b65856fe',I='https://cdn.shopify.com/shopifycloud/storefront-forms-hcaptcha/ce_storefront_forms_captcha_hcaptcha.v1.5.2.iife.js',D={infoText:'Protected by hCaptcha',privacyText:'Privacy',termsText:'Terms'},(t,e,n)=>{const o=w[L][v],c=o.bindForm;if(c)return c(t,g,e,D).then(n);var r;o.q.push([[t,g,e,D],n]),r=I,A||(h.body.append(Object.assign(h.createElement('script'),{id:'captcha-provider',async:!0,src:r})),A=!0)});var g,I,D;w[L]=w[L]||{},w[L][v]=w[L][v]||{},w[L][v].q=[],w[L][y]=w[L][y]||{},w[L][y].protect=function(t,e){n(t,void 0,e),T(t)},Object.freeze(w[L][y]),function(t,e,n,w,h,L){const[v,y,A,g]=function(t,e,n){const i=e?o:[],u=t?c:[],d=[...i,...u],f=r(d),m=r(i),_=r(d.filter((([t,e])=>n.includes(e))));return[a(f),a(m),a(_),s()]}(w,h,L),I=t=>{const e=t.target;return e instanceof HTMLFormElement?e:e&&e.form},D=t=>v().includes(t);t.addEventListener('submit',(t=>{const e=I(t);if(!e)return;const n=D(e)&&!e.dataset.hcaptchaBound&&!e.dataset.recaptchaBound,o=_(e),c=g().includes(e)&&(!o||!o.value);(n||c)&&t.preventDefault(),c&&!n&&(function(t){try{if(!f())return;!function(t){const e=f();if(!e)return;const n=_(t);if(!n)return;const o=n.value;o&&e.removeItem(o)}(t);const e=Array.from(Array(32),(()=>Math.random().toString(36)[2])).join('');!function(t,e){_(t)||t.append(Object.assign(document.createElement('input'),{type:'hidden',name:u})),t.elements[u].value=e}(t,e),function(t,e){const n=f();if(!n)return;const o=[...t.querySelectorAll(`input[type='${i}']`)].map((({name:t})=>t)),c=[...d,...o],r={};for(const[a,s]of new FormData(t).entries())c.includes(a)||(r[a]=s);n.setItem(e,JSON.stringify({[m]:1,action:t.action,data:r}))}(t,e)}catch(e){console.error('failed to persist form',e)}}(e),e.submit())}));const S=(t,e)=>{t&&!t.dataset[E]&&(n(t,e.some((e=>e===t))),T(t))};for(const o of['focusin','change'])t.addEventListener(o,(t=>{const e=I(t);D(e)&&S(e,y())}));const B=e.get('form_key'),M=e.get(l),P=B&&M;t.addEventListener('DOMContentLoaded',(()=>{const t=y();if(P)for(const e of t)e.elements[l].value===M&&p(e,B);[...new Set([...A(),...v().filter((t=>'true'===t.dataset.shopifyCaptcha))])].forEach((e=>S(e,t)))}))}(h,new URLSearchParams(w.location.search),n,t,e,['guest_login'])})(!0,!0)}();</script>
+<script integrity="sha256-JjoPp5ZfB1sSAs5SQaol1x1GgvveM+BgmRzyDexInEQ=" data-source-attribution="shopify.loadfeatures" defer="defer" src="//fridaskart.is/cdn/shopifycloud/storefront/assets/storefront/load_feature-1bd60354.js" crossorigin="anonymous"></script>
+<script>(function () {var userAgent = navigator.userAgent;var platform = navigator.platform;var maxTouchPoints = navigator.maxTouchPoints || 0;var isIOS = /iPad|iPhone|iPod/.test(platform) || (platform === 'MacIntel' && maxTouchPoints > 1);var isMacSafari = platform.indexOf('Mac') === 0 && /Safari/.test(userAgent) && !/Chrome|Chromium|CriOS|FxiOS|Edg|OPR|Android/.test(userAgent);var isAppleSafari = isIOS || isMacSafari;if (isAppleSafari) {fetch('/sf_private_access_tokens' + location.search).catch(function () {});}function browserMajorVersion(pattern) {var match = userAgent.match(pattern);return match ? parseInt(match[1], 10) : null;}function shouldLoadAutosizesPolyfill() {if (!window.PerformanceObserver?.supportedEntryTypes?.includes('paint')) {return false;}var chromeVersion = browserMajorVersion(/Chrome\/(\d+)/);if (chromeVersion !== null) {return chromeVersion < 126;}var firefoxVersion = browserMajorVersion(/Firefox\/(\d+)/);if (firefoxVersion !== null) {return firefoxVersion < 150;}var safariVersion = isAppleSafari ? browserMajorVersion(/Version\/(\d+).*Safari\//) : null;if (safariVersion !== null) {return safariVersion < 27;}return true;}if (shouldLoadAutosizesPolyfill()) {var autosizesScript = document.createElement('script');autosizesScript.async = true;autosizesScript.crossOrigin = 'anonymous';autosizesScript.src = "//fridaskart.is/cdn/shopifycloud/storefront/assets/storefront/autosizes-84416378.js";(document.head || document.documentElement).appendChild(autosizesScript);}window.ShopifyAnalytics = window.ShopifyAnalytics || {};window.ShopifyAnalytics.performance = window.ShopifyAnalytics.performance || {};(function () {var LONG_FRAME_THRESHOLD = 50;var longAnimationFrames = [];var activeRafId = null;function collectLongFrames() {var previousTime = null;function rafMonitor(now) {if (activeRafId === null) {return;}var delta = now - previousTime;if (delta > LONG_FRAME_THRESHOLD) {longAnimationFrames.push({startTime: previousTime,endTime: now,});}previousTime = now;activeRafId = requestAnimationFrame(rafMonitor);}previousTime = performance.now();activeRafId = requestAnimationFrame(rafMonitor);}if (!window.PerformanceObserver?.supportedEntryTypes?.includes('long-animation-frame')) {collectLongFrames();var timeoutId = setTimeout(function () {cancelAnimationFrame(activeRafId);}, 10000);window.ShopifyAnalytics.performance.getLongAnimationFrames = function (stopCollection) {if (stopCollection === undefined) {stopCollection = false;}if (stopCollection) {clearTimeout(timeoutId);cancelAnimationFrame(activeRafId);}return longAnimationFrames;};}})();})();</script><script id="shopify-origin-trials" async="async" integrity="sha256-mqQjA+yhr1DtPsW5MhDIq3zDu+LghfjNT49r/ttG3eY=" src="//cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-5059b83f.js" crossorigin="anonymous" onload="window.__shopifyOriginTrialsDone = true" onerror="window.__shopifyOriginTrialsDone = true"></script>
+<script>
+  window.Shopify = window.Shopify || {};
+  window.Shopify.MCP = window.Shopify.MCP || {};
+  window.Shopify.MCP.enabled = true;
+  window.Shopify.MCP.shop = "fridaskart.myshopify.com";
+  window.Shopify.MCP.mcpEndpoint = "https:\/\/fridaskart.is\/api\/mcp";
+  window.Shopify.MCP.tools = [{"name":"search_shop_policies_and_faqs","description":"Used to get facts about the stores policies, products, or services.\nSome examples of questions you can ask are:\n  - What is your return policy?\n  - What is your shipping policy?\n  - What is your phone number?\n  - What are your hours of operation?\"\n","inputSchema":{"$schema":"https:\/\/json-schema.org\/draft\/2020-12\/schema","type":"object","properties":{"query":{"type":"string","description":"A natural language query."},"context":{"type":"string","description":"Additional information about the request such as user demographics, mood, location, or other relevant details that could help in tailoring the response appropriately."}},"required":["query"]}}];
+</script>
+<script>(()=>{var d="shopify:webmcp_adapter_loaded",n=Symbol.for("shopify.webmcp_adapter_loading");function s(c,a,{win:r=window,doc:o=document}={}){function p(){try{return r.localStorage.getItem(d)==="true"}catch{return!1}}function l(){try{r.localStorage.setItem(d,"true")}catch{}}function u(){return typeof(o.modelContext||r.navigator?.modelContext)?.registerTool=="function"}function f(){if(r[n]||!u())return;let t=o.head||o.getElementsByTagName("head")[0];if(!t)return;let e=o.createElement("script");e.type="module",e.crossOrigin="anonymous",a&&(e.integrity=a),e.src=c,e.addEventListener("load",l,{once:!0}),e.addEventListener("error",()=>{r[n]=!1},{once:!0}),t.appendChild(e),r[n]=!0}function _(t){let e=o.getElementById("shopify-origin-trials");if(!e||r.__shopifyOriginTrialsDone){t();return}e.addEventListener("load",t,{once:!0}),e.addEventListener("error",t,{once:!0})}function i(){_(()=>r.setTimeout(f,0))}function m(){o.addEventListener("DOMContentLoaded",i,{once:!0})}p()?i():m()}s("https:\/\/cdn.shopify.com\/storefront\/webmcp\/webmcp-0.1.0.js","");})();
+</script>
+<script data-source-attribution="shopify.dynamic_checkout.dynamic.init">var Shopify=Shopify||{};Shopify.PaymentButton=Shopify.PaymentButton||{isStorefrontPortableWallets:!0,init:function(){window.Shopify.PaymentButton.init=function(){};var t=document.createElement("script");t.src="https://fridaskart.is/cdn/shopifycloud/portable-wallets/latest/portable-wallets.en.js",t.type="module",document.head.appendChild(t)}};
+</script>
+<script data-source-attribution="shopify.dynamic_checkout.buyer_consent">
+  function portableWalletsHideBuyerConsent(e){var t=document.getElementById("shopify-buyer-consent"),n=document.getElementById("shopify-subscription-policy-button");t&&n&&(t.classList.add("hidden"),t.setAttribute("aria-hidden","true"),n.removeEventListener("click",e))}function portableWalletsShowBuyerConsent(e){var t=document.getElementById("shopify-buyer-consent"),n=document.getElementById("shopify-subscription-policy-button");t&&n&&(t.classList.remove("hidden"),t.removeAttribute("aria-hidden"),n.addEventListener("click",e))}window.Shopify?.PaymentButton&&(window.Shopify.PaymentButton.hideBuyerConsent=portableWalletsHideBuyerConsent,window.Shopify.PaymentButton.showBuyerConsent=portableWalletsShowBuyerConsent);
+</script>
+<script data-source-attribution="shopify.dynamic_checkout.cart.bootstrap">document.addEventListener("DOMContentLoaded",(function(){function t(){return document.querySelector("shopify-accelerated-checkout-cart, shopify-accelerated-checkout")}if(t())Shopify.PaymentButton.init();else{new MutationObserver((function(e,n){t()&&(Shopify.PaymentButton.init(),n.disconnect())})).observe(document.body,{childList:!0,subtree:!0})}}));
+</script>
+
+<script id="shopify-cfh-end">window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.end');</script>
+  <link rel="next" href="/next"/>
+  <link rel="prev" href="/prev"/>
+
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0258/9097/9892/files/WebLogo.jpg?height=628&pad_color=ffffff&v=1613522176&width=1200" />
+<meta property="og:image:secure_url" content="https://cdn.shopify.com/s/files/1/0258/9097/9892/files/WebLogo.jpg?height=628&pad_color=ffffff&v=1613522176&width=1200" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<link href="https://monorail-edge.shopifysvc.com" rel="dns-prefetch">
+<script>(function(){if ("sendBeacon" in navigator && "performance" in window) {try {var session_token_from_headers = performance.getEntriesByType('navigation')[0].serverTiming.find(x => x.name == '_s').description;} catch {var session_token_from_headers = undefined;}var session_cookie_matches = document.cookie.match(/_shopify_s=([^;]*)/);var session_token_from_cookie = session_cookie_matches && session_cookie_matches.length === 2 ? session_cookie_matches[1] : "";var session_token = session_token_from_headers || session_token_from_cookie || "";function handle_abandonment_event(e) {var entries = performance.getEntries().filter(function(entry) {return /monorail-edge.shopifysvc.com/.test(entry.name);});if (!window.abandonment_tracked && entries.length === 0) {window.abandonment_tracked = true;var currentMs = Date.now();var navigation_start = performance.timing.navigationStart;var payload = {shop_id: 25890979892,url: window.location.href,navigation_start,duration: currentMs - navigation_start,session_token,page_type: "index"};window.navigator.sendBeacon("https://monorail-edge.shopifysvc.com/v1/produce", JSON.stringify({schema_id: "online_store_buyer_site_abandonment/1.1",payload: payload,metadata: {event_created_at_ms: currentMs,event_sent_at_ms: currentMs}}));}}window.addEventListener('pagehide', handle_abandonment_event);}}());</script>
+<script>
+  window.__TREKKIE_SHIM_QUEUE = window.__TREKKIE_SHIM_QUEUE || [];
+</script>
+<script>(function(){var wpmLoader=function(){"use strict";var e=/Googlebot|Storebot-Google|bingbot|Baiduspider|YandexBot|DuckDuckBot|Slurp|facebookexternalhit|Twitterbot|LinkedInBot|Applebot|AdsBot-Google|Mediapartners-Google|APIs-Google|PetalBot|SemrushBot|AhrefsBot|MJ12bot|DotBot|Acunetix|PerplexityBot|Perplexity-User/i,r=/bytedance/i;function o(){try{var e=document.cookie;if(!e||"string"!=typeof e)return;for(var r=0,o=e.split(";");r<o.length;r++){var d=o[r],t=d.indexOf("=");if(-1!==t){var n=d.slice(0,t).trim();if(n){var i=void 0;try{i=decodeURIComponent(n)}catch(e){i=n}if("_shopify_s"===i){var a=d.slice(t+1).trim();try{return decodeURIComponent(a)}catch(e){return a}}}}}return}catch(e){return}}function d(e){try{"undefined"!=typeof console&&"function"==typeof console.warn&&console.warn(e)}catch(e){}}return function(t,n,i,a){var s,c,u,l,f=arguments.length>4&&void 0!==arguments[4]?arguments[4]:{},p=(c=(s={modern:/Edge?\/(1{2}[4-9]|1[2-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Firefox\/(1{2}[4-9]|1[2-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Chrom(ium|e)\/(9{2}|\d{3,})\.\d+(\.\d+|)|(Maci|X1{2}).+ Version\/(15\.\d+|(1[6-9]|[2-9]\d|\d{3,})\.\d+)([,.]\d+|)( \(\w+\)|)( Mobile\/\w+|) Safari\/|Chrome.+OPR\/(9{2}|\d{3,})\.\d+\.\d+|(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS|CPU iPad OS)[ +]+(15[._]\d+|(1[6-9]|[2-9]\d|\d{3,})[._]\d+)([._]\d+|)|Android:?[ /-](14[89]|1[5-9]\d|[2-9]\d{2}|\d{4,})(\.\d+|)(\.\d+|)|Android.+Firefox\/(15\d|1[6-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+Chrom(ium|e)\/(14[89]|1[5-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|SamsungBrowser\/([2-9]\d|\d{3,})\.\d+/,legacy:/Edge?\/(1[6-9]|[2-9]\d|\d{3,})\.\d+(\.\d+|)|Firefox\/(5[4-9]|[6-9]\d|\d{3,})\.\d+(\.\d+|)|Chrom(ium|e)\/(5[1-9]|[6-9]\d|\d{3,})\.\d+(\.\d+|)([\d.]+$|.*Safari\/(?![\d.]+ Edge\/[\d.]+$))|(Maci|X1{2}).+ Version\/(10\.\d+|(1[1-9]|[2-9]\d|\d{3,})\.\d+)([,.]\d+|)( \(\w+\)|)( Mobile\/\w+|) Safari\/|Chrome.+OPR\/(3[89]|[4-9]\d|\d{3,})\.\d+\.\d+|(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS|CPU iPad OS)[ +]+(10[._]\d+|(1[1-9]|[2-9]\d|\d{3,})[._]\d+)([._]\d+|)|Android:?[ /-](14[89]|1[5-9]\d|[2-9]\d{2}|\d{4,})(\.\d+|)(\.\d+|)|Mobile Safari.+OPR\/([89]\d|\d{3,})\.\d+\.\d+|Android.+Firefox\/(15\d|1[6-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+Chrom(ium|e)\/(14[89]|1[5-9]\d|[2-9]\d{2}|\d{4,})\.\d+(\.\d+|)|Android.+(UC? ?Browser|UCWEB|U3)[ /]?(15\.([5-9]|\d{2,})|(1[6-9]|[2-9]\d|\d{3,})\.\d+)\.\d+|SamsungBrowser\/(5\.\d+|([6-9]|\d{2,})\.\d+)|Android.+MQ{2}Browser\/(14(\.(9|\d{2,})|)|(1[5-9]|[2-9]\d|\d{3,})(\.\d+|))(\.\d+|)|K[Aa][Ii]OS\/(3\.\d+|([4-9]|\d{2,})\.\d+)(\.\d+|)/}).modern,u=s.legacy,(l=navigator.userAgent).match(e)?"bot":l.match(c)?"modern":l.match(u)?"legacy":l.match(r)?"bot":"unknown"),h=function(e){var r=e.version,t=e.browserTarget,n=e.surface,i=e.shopId,a=e.monorailEndpoint,s=window.location.href;return{emit:function(e){var c,u=e.status,l=e.errorMsg;if(!a)return d("[Web Pixels Manager] No Monorail endpoint provided, skipping logging."),!1;try{var f=(new Date).getTime();c=JSON.stringify({metadata:{event_sent_at_ms:f},events:[{schema_id:"web_pixels_manager_load/3.2",payload:{version:r,bundle_target:t,page_url:s,status:u,surface:n,error_msg:l,shop_id:i,visit_token:o()},metadata:{event_created_at_ms:f}}]})}catch(e){return!1}var p,h=!1;try{"function"==typeof window.navigator.sendBeacon&&-1===(p=window.navigator.userAgent).indexOf("iPhone; CPU iPhone OS 12_")&&-1===p.indexOf("iPad; CPU OS 12_")&&-1===p.indexOf("iPod touch; CPU iPhone OS 12_")&&(h=window.navigator.sendBeacon.bind(window.navigator)(a,c))}catch(e){h=!1}if(h)return!0;try{var m=new XMLHttpRequest;return m.open("POST",a,!0),m.setRequestHeader("Content-Type","text/plain"),m.send(c),!0}catch(e){return d("[Web Pixels Manager] Got an unhandled error while logging to Monorail."),!1}}}}({version:i,browserTarget:p,surface:t.surface,shopId:t.shopId,monorailEndpoint:t.monorailEndpoint});if(Boolean(null==(y=null==(m=window.Shopify)?void 0:m.analytics)?void 0:y.replayQueue))h.emit({status:"setup-skipped",errorMsg:"replay queue already initialized."});else{var m,y;h.emit({status:"setup-started"}),window.Shopify=window.Shopify||{};var g=window.Shopify;g.analytics=g.analytics||{};var v=g.analytics;v.replayQueue=[],v.publish=function(e,r,o){return v.replayQueue.push([e,r,o]),!0};try{self.performance.mark("wpm:start")}catch(e){}var w,b="modern"===p?"modern":"legacy",P=(null!=a?a:{modern:"",legacy:""})[b],S=[(w={baseUrl:n,hashVersion:i,buildTarget:b}).baseUrl,"/wpm","/b",w.hashVersion,"modern"===w.buildTarget?"m":"l",".js"].join("");try{f.browserTarget=p,O(function(){try{O(_)}catch(e){h.emit({status:"failed",errorMsg:U(e)})}}),h.emit({status:"loading"})}catch(e){h.emit({status:"failed",errorMsg:U(e)})}}function C(){if(!function(){var e,r;return Boolean(null==(r=null==(e=window.Shopify)?void 0:e.analytics)?void 0:r.initialized)}()){var e=window.webPixelsManager.init(t)||void 0;if(e){var r=window.Shopify.analytics;r.replayQueue.forEach(function(r){var o=r[0],d=r[1],t=r[2];e.publishCustomEvent(o,d,t)}),r.replayQueue=[],r.publish=e.publishCustomEvent,r.visitor=e.visitor,r.initialized=!0}}}function _(){return h.emit({status:"failed",errorMsg:"".concat(S," has failed to load")})}function O(e){var r;!function(e){var r=e.src,o=e.async,d=void 0===o||o,t=e.onload,n=e.onerror,i=e.sri,a=e.scriptDataAttributes,s=void 0===a?{}:a,c=document.createElement("script"),u=document.querySelector("head"),l=document.querySelector("body");if(c.async=d,c.src=r,i&&(c.integrity=i,c.crossOrigin="anonymous"),s)for(var f in s)if(Object.prototype.hasOwnProperty.call(s,f))try{c.dataset[f]=s[f]}catch(e){}if(t&&c.addEventListener("load",t),n&&c.addEventListener("error",n),u)u.appendChild(c);else{if(!l)throw new Error("Did not find a head or body element to append the script");l.appendChild(c)}}({src:S,async:!0,onload:C,onerror:e,sri:(r=P,"string"==typeof r&&/^sha384-[A-Za-z0-9+/=]+$/.test(r)?P:""),scriptDataAttributes:f})}function U(e){return e instanceof Error?e.message:"Unknown error"}}}();wpmLoader({shopId: 25890979892,storefrontBaseUrl: "https://fridaskart.is",extensionsBaseUrl: "https://extensions.shopifycdn.com/cdn/shopifycloud/web-pixels-manager",monorailEndpoint: "https://fridaskart.is/.well-known/shopify/monorail/unstable/produce_batch",surface: "storefront-renderer",enabledBetaFlags: ["d5bdd5d0","656605ce"],webPixelsConfigList: [{"id":"shopify-app-pixel","configuration":"{}","eventPayloadVersion":"v1","runtimeContext":"STRICT","scriptVersion":"0501","apiClientId":"shopify-pixel","type":"APP","privacyPurposes":["ANALYTICS","MARKETING"]},{"id":"shopify-custom-pixel","eventPayloadVersion":"v1","runtimeContext":"LAX","scriptVersion":"0501","apiClientId":"shopify-pixel","type":"CUSTOM","privacyPurposes":["ANALYTICS","MARKETING"]}],isMerchantRequest: false,initData: {"shop":{"name":"FríðaSkart","paymentSettings":{"currencyCode":"ISK"},"myshopifyDomain":"fridaskart.myshopify.com","countryCode":"IS","storefrontUrl":"https:\/\/fridaskart.is"},"customer":null,"cart":null,"checkout":null,"productVariants":[],"products":[],"purchasingCompany":null},},"https://fridaskart.is/cdn","f01ff87fw60c3124ep2ab91c4cm696d2878",{"modern":"","legacy":""},{"trekkieShim":true,"agentContext":true,"apiClientId":"580111","facebookCapiEnabled":"false","themeId":"76013174836","themeStoreId":"686","themePublished":"true","eventMetadataId":"f1925d14-a477-42c8-8a4c-d6858e8c326a","pageType":"home","shopId":"25890979892","storefrontBaseUrl":"https:\/\/fridaskart.is","extensionBaseUrl":"https:\/\/extensions.shopifycdn.com\/cdn\/shopifycloud\/web-pixels-manager","surface":"storefront-renderer","enabledBetaFlags":"[\"d5bdd5d0\", \"656605ce\"]","isMerchantRequest":"false","hashVersion":"f01ff87fw60c3124ep2ab91c4cm696d2878","publish":"custom","events":"[[\"page_viewed\",{}]]"});})();</script><script>
+  window.ShopifyAnalytics = window.ShopifyAnalytics || {};
+  window.ShopifyAnalytics.meta = window.ShopifyAnalytics.meta || {};
+  window.ShopifyAnalytics.meta.currency = 'ISK';
+  var meta = {"page":{"pageType":"home","requestId":"c28a92aa-0a65-4cd3-acc9-70c67b3a0b10-1786412695"}};
+  for (var attr in meta) {
+    window.ShopifyAnalytics.meta[attr] = meta[attr];
+  }
+</script>
+<script class="analytics">
+  (function () {
+    var customDocumentWrite = function(content) {
+      var jquery = null;
+
+      if (window.jQuery) {
+        jquery = window.jQuery;
+      } else if (window.Checkout && window.Checkout.$) {
+        jquery = window.Checkout.$;
+      }
+
+      if (jquery) {
+        jquery('body').append(content);
+      }
+    };
+
+    var hasLoggedConversion = function(token) {
+      if (token) {
+        return document.cookie.indexOf('loggedConversion=' + token) !== -1;
+      }
+      return false;
+    }
+
+    var setCookieIfConversion = function(token) {
+      if (token) {
+        var twoMonthsFromNow = new Date(Date.now());
+        twoMonthsFromNow.setMonth(twoMonthsFromNow.getMonth() + 2);
+
+        document.cookie = 'loggedConversion=' + token + '; expires=' + twoMonthsFromNow;
+      }
+    }
+
+    var trekkie = window.ShopifyAnalytics.lib = window.trekkie = window.trekkie || [];
+    window.ShopifyAnalytics.lib.trekkie = window.trekkie;
+    if (trekkie.integrations) {
+      return;
+    }
+    trekkie.methods = [
+      'identify',
+      'page',
+      'ready',
+      'track',
+      'trackForm',
+      'trackLink'
+    ];
+    trekkie.factory = function(method) {
+      return function() {
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(method);
+        trekkie.push(args);
+        if (window.__TREKKIE_SHIM_QUEUE && (method == 'track' || method == 'page')) {
+          try {
+            window.__TREKKIE_SHIM_QUEUE.push({
+              from: 'trekkie-stub',
+              method: method,
+              args: args.slice(1)
+            });
+          } catch (e) {
+            // no-op
+          }
+        }
+        return trekkie;
+      };
+    };
+    for (var i = 0; i < trekkie.methods.length; i++) {
+      var key = trekkie.methods[i];
+      trekkie[key] = trekkie.factory(key);
+    }
+    trekkie.load = function(config) {
+      trekkie.config = config || {};
+      trekkie.config.initialDocumentCookie = document.cookie;
+      var first = document.getElementsByTagName('script')[0];
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.onerror = function(e) {
+  var scriptFallback = document.createElement('script');
+  scriptFallback.type = 'text/javascript';
+  scriptFallback.onerror = function(error) {
+          var Monorail = {
+      produce: function produce(monorailDomain, schemaId, payload) {
+        var currentMs = new Date().getTime();
+        var event = {
+          schema_id: schemaId,
+          payload: payload,
+          metadata: {
+            event_created_at_ms: currentMs,
+            event_sent_at_ms: currentMs
+          }
+        };
+        return Monorail.sendRequest("https://" + monorailDomain + "/v1/produce", JSON.stringify(event));
+      },
+      sendRequest: function sendRequest(endpointUrl, payload) {
+        // Try the sendBeacon API
+        if (window && window.navigator && typeof window.navigator.sendBeacon === 'function' && typeof window.Blob === 'function' && !Monorail.isIos12()) {
+          var blobData = new window.Blob([payload], {
+            type: 'text/plain'
+          });
+
+          if (window.navigator.sendBeacon(endpointUrl, blobData)) {
+            return true;
+          } // sendBeacon was not successful
+
+        } // XHR beacon
+
+        var xhr = new XMLHttpRequest();
+
+        try {
+          xhr.open('POST', endpointUrl);
+          xhr.setRequestHeader('Content-Type', 'text/plain');
+          xhr.send(payload);
+        } catch (e) {
+          console.log(e);
+        }
+
+        return false;
+      },
+      isIos12: function isIos12() {
+        return window.navigator.userAgent.lastIndexOf('iPhone; CPU iPhone OS 12_') !== -1 || window.navigator.userAgent.lastIndexOf('iPad; CPU OS 12_') !== -1;
+      }
+    };
+    Monorail.produce('monorail-edge.shopifysvc.com',
+      'trekkie_storefront_load_errors/1.1',
+      {shop_id: 25890979892,
+      theme_id: 76013174836,
+      app_name: "storefront",
+      context_url: window.location.href,
+      source_url: "//fridaskart.is/cdn/s/trekkie.storefront.22ed85677b8327684cf422c8aecaa425ca9ac45b.min.js"});
+
+  };
+  scriptFallback.async = true;
+  scriptFallback.src = '//fridaskart.is/cdn/s/trekkie.storefront.22ed85677b8327684cf422c8aecaa425ca9ac45b.min.js';
+  first.parentNode.insertBefore(scriptFallback, first);
+};
+script.async = true;
+script.src = '//fridaskart.is/cdn/s/trekkie.storefront.22ed85677b8327684cf422c8aecaa425ca9ac45b.min.js';
+first.parentNode.insertBefore(script, first);
+
+    };
+    trekkie.load(
+      {"Trekkie":{"appName":"storefront","development":false,"defaultAttributes":{"shopId":25890979892,"isMerchantRequest":null,"themeId":76013174836,"themeCityHash":"2192051760975881420","contentLanguage":"en","currency":"ISK","eventMetadataId":"f1925d14-a477-42c8-8a4c-d6858e8c326a"},"isServerSideCookieWritingEnabled":true,"monorailRegion":"shop_domain","enabledBetaFlags":["b5387b81","d5bdd5d0"]},"Session Attribution":{},"S2S":{"facebookCapiEnabled":false,"source":"trekkie-storefront-renderer","apiClientId":580111}}
+    );
+
+    var loaded = false;
+    trekkie.ready(function() {
+      if (loaded) return;
+      loaded = true;
+
+      window.ShopifyAnalytics.lib = window.trekkie;
+
+      var originalDocumentWrite = document.write;
+      document.write = customDocumentWrite;
+      try { window.ShopifyAnalytics.merchantGoogleAnalytics.call(this); } catch(error) {};
+      document.write = originalDocumentWrite;
+
+      var match = window.location.pathname.match(/checkouts\/(.+)\/(thank_you|post_purchase)/)
+      var token = match? match[1]: undefined;
+      if (!hasLoggedConversion(token)) {
+        setCookieIfConversion(token);
+        
+      }
+    });
+
+    window.ShopifyAnalytics.lib.page(null,{"pageType":"home","requestId":"c28a92aa-0a65-4cd3-acc9-70c67b3a0b10-1786412695","shopifyEmitted":true});
+
+    var eventsListenerScript = document.createElement('script');
+    eventsListenerScript.async = true;
+    eventsListenerScript.src = "//fridaskart.is/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js";
+    document.getElementsByTagName('head')[0].appendChild(eventsListenerScript);
+})();</script>
+<script
+  defer
+  src="https://fridaskart.is/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.8.0.min.js"
+  data-application="storefront-renderer"
+  data-shop-id="25890979892"
+  data-render-region="gcp-europe-west1"
+  data-page-type="index"
+  data-theme-instance-id="76013174836"
+  data-theme-name="Icon"
+  data-theme-version="6.6.3"
+  data-monorail-region="shop_domain"
+  data-resource-timing-sampling-rate="10"
+  data-shs="true"
+  data-shs-beacon="true"
+  data-shs-export-with-fetch="true"
+  data-shs-logs-sample-rate="1"
+  data-shs-beacon-endpoint="https://fridaskart.is/api/collect"
+></script>
+<meta name="shopify-y" content="d6934e55-278f-40ac-b9de-7bc369f40404">
+</head>
+
+<body class="gridlock shifter-left index">
+  
+    <div id="CartDrawer" class="drawer drawer--right">
+  <div class="drawer__header">
+    <div class="table-cell">
+    <h3>My Cart</h3>
+    </div>
+    <div class="table-cell">
+    <span class="drawer__close js-drawer-close">
+        Close
+    </span>
+    </div>
+  </div>
+  <div id="CartContainer"></div>
+</div>
+
+  
+
+  <div class="shifter-page  is-moved-by-drawer" id="PageContainer">
+
+    <div id="shopify-section-header" class="shopify-section"><header class="scrollheader"
+data-section-id="header"
+data-section-type="header-section"
+data-sticky="true">
+
+  
+
+  
+  <div class="topbar gridlock-fluid">
+    <div class="row">
+      
+      <div class="desktop-push-3 desktop-6 tablet-6 mobile-3" id="banner-message">
+        
+          <p><strong>Opnunartími:</strong>  mán-föst: 11-17 og laug: 11-16 </p><p>Free shipping on domestic orders & international shipping 6.500 ISK</p>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="navigation" class="gridlock-fluid">
+    <div class="row">
+      <div class="nav-container desktop-12 tablet-6 mobile-3 inline"><!-- start nav container -->
+
+      <!-- Mobile menu trigger --> <div class="mobile-only span-1" style="text-align: left;"><span class="shifter-handle"><i class="la la-bars" aria-hidden="true"></i></span></div>
+      
+      
+      
+
+      
+
+      
+
+      <nav class="desktop-5 span-5">
+        <ul id="main-nav">
+          
+            
+
+
+
+<li><a class="top_level" href="/">HOME</a></li>
+
+
+          
+            
+
+
+
+<li class="dropdown has_sub_menu" aria-haspopup="true" aria-expanded="false">
+  <a href="/collections/all" class="dlinks top_level">
+    COLLECTIONS
+  </a>
+  
+    <ul class="submenu">
+      
+        
+          <li>
+            <a href="/collections/celts-kings">
+              CELTS & KINGS
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/the-comb">
+              THE COMB
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/knitting">
+              KNITTING
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/conches">
+              SEASHELL
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/bubble-seaweed">
+              BUBBLE SEAWEED
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/acanthus">
+              ACANTHUS
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/molecule">
+              MOLECULE
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/creatures-from-the-past">
+              CREATURES FROM THE PAST
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/the-traveler">
+              THE TRAVELER
+            </a>
+          </li>
+        
+      
+    </ul>
+  
+</li>
+
+
+          
+            
+
+
+
+<li class="dropdown has_sub_menu" aria-haspopup="true" aria-expanded="false">
+  <a href="/collections/shop" class="dlinks top_level">
+    SHOP
+  </a>
+  
+    <ul class="submenu">
+      
+        
+          <li>
+            <a href="/collections/bracelet">
+              BRACELETS
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/earrings">
+              EARRINGS
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/necklaces">
+              NECKLACES
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/collections/rings">
+              RINGS
+            </a>
+          </li>
+        
+      
+    </ul>
+  
+</li>
+
+
+          
+        </ul>
+      </nav>
+
+      
+        <div id="logo" class="desktop-2 tablet-3 desktop-2 span-2 inline">
+
+<div class="first_logo">
+<a href="/">
+  <img src="//fridaskart.is/cdn/shop/files/WebLogo_400x.jpg?v=1613522176" itemprop="logo">
+</a>
+</div>
+  
+
+</div>
+
+      
+
+      
+        <ul id="cart" class="span-5">
+            
+  <li class="currsw">
+    <select class="currency-picker" name="currencies">
+  
+  
+  <option value="ISK" selected="selected">ISK</option>
+  
+    
+  
+    
+      <option value="USD">USD</option>
+    
+  
+    
+      <option value="GBP">GBP</option>
+    
+  
+    
+      <option value="CAD">CAD</option>
+    
+  
+    
+      <option value="AUD">AUD</option>
+    
+  
+    
+      <option value="EUR">EUR</option>
+    
+  
+    
+      <option value="SEK">SEK</option>
+    
+  
+    
+      <option value="DKK">DKK</option>
+    
+  
+    
+      <option value="NOK">NOK</option>
+    
+  
+</select>
+
+  </li>
+
+<li class="seeks">
+  <a id="search_trigger" href="#">
+    <i class="la la-search" aria-hidden="true"></i>
+  </a>
+</li>
+
+  
+    <li class="cust">
+      <a href="/account/login">
+        <i class="la la-user" aria-hidden="true"></i>
+      </a>
+    </li>
+  
+
+<li>
+  <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+    <span class="cart-words"></span>
+  &nbsp;<i class="la la-shopping-cart" aria-hidden="true"></i>
+    <span class="CartCount">0</span>
+    &nbsp;<span class="CartCost"><span class="money">0 kr</span></span>
+  </a>
+</li>
+
+        </ul>
+      
+
+      <!-- Shown on Mobile Only -->
+<ul id="mobile-cart" class="mobile-3 span-1 mobile-only">
+
+  <li>
+    <select class="currency-picker" name="currencies">
+  
+  
+  <option value="ISK" selected="selected">ISK</option>
+  
+    
+  
+    
+      <option value="USD">USD</option>
+    
+  
+    
+      <option value="GBP">GBP</option>
+    
+  
+    
+      <option value="CAD">CAD</option>
+    
+  
+    
+      <option value="AUD">AUD</option>
+    
+  
+    
+      <option value="EUR">EUR</option>
+    
+  
+    
+      <option value="SEK">SEK</option>
+    
+  
+    
+      <option value="DKK">DKK</option>
+    
+  
+    
+      <option value="NOK">NOK</option>
+    
+  
+</select>
+
+  </li>
+
+  <li>
+    <a href="/cart" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
+      <span class="cart-words">My Cart</span>
+      &nbsp;<i class="la la-shopping-cart" aria-hidden="true"></i>
+      <span class="CartCount">0</span>
+    </a>
+  </li>
+</ul>
+
+      </div><!-- end nav container -->
+
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div id="search_reveal" style="display: none">
+      <form action="/search" method="get">
+        <input type="hidden" name="type" value="product">
+        <input type="text" name="q" id="q" placeholder="Search"/>
+        <input value="Search" name="submit" id="search_button" class="button" type="submit">
+      </form>
+  </div>
+</header>
+<div id="phantom"></div>
+<div class="clear"></div>
+<style>
+  
+    @media screen and ( min-width: 740px ) {
+      #logo img { max-width: 155px; }
+    }
+  
+
+  
+
+  
+    #logo { text-align: center !important; }
+    #logo a { float: none; }
+  
+
+  
+
+  
+
+  .topbar {
+    font-size: 12px;
+    text-align: center !important;
+  }
+  .topbar,
+  .topbar a {
+    color: #ffffff;
+  }
+  .topbar ul#cart li a {
+    font-size: 12px;
+  }
+  .topbar select.currency-picker {
+    font-size: 12px;
+  }
+  .nav-container { grid-template-columns: repeat(12, 1fr); }
+
+  .nav-container ul#cart li a { padding: 0;}
+  	ul#main-nav { text-align: left; }
+  
+
+  @media screen and (max-width: 980px) {
+    div#logo {
+      grid-column: auto / span 1;
+    }
+  }
+
+  .topbar p { font-size: 12px; }
+
+  body.index .scrollheader .nav-container .shifter-handle,
+  body.index .scrollheader ul#main-nav li a,
+  body.index .scrollheader .nav-container ul#cart li a,
+  body.index .scrollheader .nav-container ul#cart li select.currency-picker {
+  color: #000000;
+  }
+
+  body.index .scrollheader {
+    background: #ffffff;
+  }
+
+  body.index .coverheader .nav-container .shifter-handle,
+  body.index .coverheader ul#main-nav li a,
+  body.index .coverheader .nav-container ul#cart li a,
+  body.index .coverheader .nav-container ul#cart li select.currency-picker {
+  color: #000000;
+  }
+
+  body.index .coverheader {
+  background: #fff;
+  }
+
+  
+
+  
+</style>
+
+
+</div>
+    <div class="page-wrap">
+    
+      <div id="shopify-section-scrolling-announcements" class="shopify-section">
+
+
+</div>
+    
+
+      
+        <div class="index-sections">
+  <!-- BEGIN content_for_index --><div id="shopify-section-1559067219938" class="shopify-section index-section"><section
+class="home homepage-section slideshow-section"
+data-section-id="1559067219938"
+data-section-type="slideshow-section"
+data-aos="fade-up">
+
+
+<!-- Start Flexslider Option -->
+
+  
+
+  <div class="flexslider" id="flexslider--1559067219938" data-speed="5000">
+    <ul class="slides">
+      
+        <li id="slide--1559067219938-1"
+          class="slide--1559067219938-1 slide_image lazyload lazyload-fade"
+          data-block-id="1559067219938-1"
+          data-flexslider-index="0"
+          data-sizes="auto"
+          >
+
+          
+            <div class="desktop-image">
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.65705220651861%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_2002_{width}x.JPG?v=1615922635"
+      data-sizes="auto"
+      alt="">
+  </div>
+            </div>
+          
+          
+
+          <div class="flex-caption slide-1559067219938-1">
+            <div class="caption-inners">
+              
+                <h2 class="slide-title">
+                  CELTS & KINGS COLLECTION
+                </h2>
+              
+              
+                <p class="caption">
+                  Statement pieces and accessories
+                </p>
+              
+              
+                <div class="cta">
+                  <a href="/collections/celts-kings">
+                    SHOP NOW
+                  </a>
+                </div>
+              
+              
+            </div>
+          </div>
+        </li>
+        <style>
+          .flexslider {
+            width: 100% !important;
+            height: 100% !important;
+          }
+          .flexslider .slides > li {
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center top !important;
+          }
+          .no-js .slide_image {
+            background-image: url('//fridaskart.is/cdn/shop/files/IMG_2002_1024x.JPG?v=1615922635');
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center top !important;
+            opacity: 1;
+          }
+          .flex-caption {
+            width: 370px;
+          }
+          .flex-caption.slide-1559067219938-1 {
+            position: absolute;
+            top: 43%;
+            left: 20%;
+            -webkit-transform: translate(-185px, -43%);
+            -ms-transform: translate(-185px, -43%);
+            -moz-transform: translate(-185px, -43%);
+            -o-transform: translate(-185px, -43%);
+            transform: translate(-185px, -43%);
+          }
+
+          .flex-caption.slide-1559067219938-1 .caption-inners {
+            
+            
+            
+            
+              background: transparent;
+            
+            display: inline-block;
+            padding: 20px;
+            text-align: left;
+          }
+
+          .flex-caption.slide-1559067219938-1 h2.slide-title {
+            color: #c8a88d;
+          }
+          .flex-caption.slide-1559067219938-1 p {
+            color: #c8a88d;
+          }
+          .flex-caption.slide-1559067219938-1 .cta a {
+            color: #ffffff;
+            background: #b08a6b;
+          }
+          #flexslider--1559067219938 .flex-caption .cta a {
+            font-size: 14px;
+            font-weight: 400;
+          }
+          #flexslider--1559067219938 .flex-caption h2.slide-title {
+            font-size: 28px;
+            font-weight:700;
+          }
+          #flexslider--1559067219938 .flex-caption p {
+            font-size: 18px;
+          }
+          .no-js .slide_image {
+            opacity: 1;
+          }
+
+          @media only screen and (max-width: 740px) {
+
+            
+              .slide--1559067219938-1 .desktop-image .box-ratio {
+                padding-bottom: 360px !important;
+              }
+              .slide--1559067219938-1 .desktop-image img {
+                object-fit: cover;
+                object-position: center;
+                height: 360px !important;
+              }
+              .slide--1559067219938-1 .desktop-image {
+                display: block;
+              }
+              .flex-caption.slide-1559067219938-1 {
+                position: relative !important;
+                padding: 0 0 0 0 !important;
+                left: 0 !important;
+                top: 0 !important;
+                webkit-transform: translate(0,0);
+                -ms-transform: translate(0,0);
+                -moz-transform: translate(0,0);
+                -o-transform: translate(0,0);
+                transform: translate(0,0);
+              }
+            
+            .flex-caption {
+              width: 100%;
+            }
+            
+            .flex-control-nav {
+              display: none;
+            }
+            .flex-direction-nav a {
+              top: 40% !important;
+            }
+            .caption-inners {
+              text-align: center !important;
+            }
+            .caption-inners h2, .caption-inners p {
+              color: #000000 !important;
+            }
+          }
+        </style>
+      
+        <li id="slide--1559067219938-0"
+          class="slide--1559067219938-0 slide_image lazyload lazyload-fade"
+          data-block-id="1559067219938-0"
+          data-flexslider-index="1"
+          data-sizes="auto"
+          >
+
+          
+            <div class="desktop-image">
+              
+  
+<div class="box-ratio" style="padding-bottom: 50.44444444444445%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/KELTAR-01_{width}x.jpg?v=1613522175"
+      data-sizes="auto"
+      alt="">
+  </div>
+            </div>
+          
+          
+
+          <div class="flex-caption slide-1559067219938-0">
+            <div class="caption-inners">
+              
+                <h2 class="slide-title">
+                  ALL IN THE DETAILS
+                </h2>
+              
+              
+                <p class="caption">
+                  Explore our new collection
+                </p>
+              
+              
+                <div class="cta">
+                  <a href="/collections/celts-kings">
+                    EXPLORE
+                  </a>
+                </div>
+              
+              
+            </div>
+          </div>
+        </li>
+        <style>
+          .flexslider {
+            width: 100% !important;
+            height: 100% !important;
+          }
+          .flexslider .slides > li {
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center top !important;
+          }
+          .no-js .slide_image {
+            background-image: url('//fridaskart.is/cdn/shop/files/KELTAR-01_1024x.jpg?v=1613522175');
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center top !important;
+            opacity: 1;
+          }
+          .flex-caption {
+            width: 370px;
+          }
+          .flex-caption.slide-1559067219938-0 {
+            position: absolute;
+            top: 12%;
+            left: 87%;
+            -webkit-transform: translate(-185px, -12%);
+            -ms-transform: translate(-185px, -12%);
+            -moz-transform: translate(-185px, -12%);
+            -o-transform: translate(-185px, -12%);
+            transform: translate(-185px, -12%);
+          }
+
+          .flex-caption.slide-1559067219938-0 .caption-inners {
+            
+            
+            
+            
+              background: transparent;
+            
+            display: inline-block;
+            padding: 20px;
+            text-align: right;
+          }
+
+          .flex-caption.slide-1559067219938-0 h2.slide-title {
+            color: #080808;
+          }
+          .flex-caption.slide-1559067219938-0 p {
+            color: #080808;
+          }
+          .flex-caption.slide-1559067219938-0 .cta a {
+            color: #ffffff;
+            background: #080808;
+          }
+          #flexslider--1559067219938 .flex-caption .cta a {
+            font-size: 14px;
+            font-weight: 400;
+          }
+          #flexslider--1559067219938 .flex-caption h2.slide-title {
+            font-size: 28px;
+            font-weight:700;
+          }
+          #flexslider--1559067219938 .flex-caption p {
+            font-size: 18px;
+          }
+          .no-js .slide_image {
+            opacity: 1;
+          }
+
+          @media only screen and (max-width: 740px) {
+
+            
+              .slide--1559067219938-0 .desktop-image .box-ratio {
+                padding-bottom: 360px !important;
+              }
+              .slide--1559067219938-0 .desktop-image img {
+                object-fit: cover;
+                object-position: center;
+                height: 360px !important;
+              }
+              .slide--1559067219938-0 .desktop-image {
+                display: block;
+              }
+              .flex-caption.slide-1559067219938-0 {
+                position: relative !important;
+                padding: 0 0 0 0 !important;
+                left: 0 !important;
+                top: 0 !important;
+                webkit-transform: translate(0,0);
+                -ms-transform: translate(0,0);
+                -moz-transform: translate(0,0);
+                -o-transform: translate(0,0);
+                transform: translate(0,0);
+              }
+            
+            .flex-caption {
+              width: 100%;
+            }
+            
+            .flex-control-nav {
+              display: none;
+            }
+            .flex-direction-nav a {
+              top: 40% !important;
+            }
+            .caption-inners {
+              text-align: center !important;
+            }
+            .caption-inners h2, .caption-inners p {
+              color: #000000 !important;
+            }
+          }
+        </style>
+      
+        <li id="slide--1566307026560"
+          class="slide--1566307026560 slide_image lazyload lazyload-fade"
+          data-block-id="1566307026560"
+          data-flexslider-index="2"
+          data-sizes="auto"
+          >
+
+          
+            <div class="desktop-image">
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.650390625%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/55929376_2433834459982741_6954174315675779072_o_{width}x.jpg?v=1613522175"
+      data-sizes="auto"
+      alt="">
+  </div>
+            </div>
+          
+          
+
+          <div class="flex-caption slide-1566307026560">
+            <div class="caption-inners">
+              
+                <h2 class="slide-title">
+                  SHOP THE COLLECTIONS
+                </h2>
+              
+              
+                <p class="caption">
+                  Perfect to stack & layer
+                </p>
+              
+              
+                <div class="cta">
+                  <a href="/collections">
+                    SHOP
+                  </a>
+                </div>
+              
+              
+            </div>
+          </div>
+        </li>
+        <style>
+          .flexslider {
+            width: 100% !important;
+            height: 100% !important;
+          }
+          .flexslider .slides > li {
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center top !important;
+          }
+          .no-js .slide_image {
+            background-image: url('//fridaskart.is/cdn/shop/files/55929376_2433834459982741_6954174315675779072_o_1024x.jpg?v=1613522175');
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            background-position: center top !important;
+            opacity: 1;
+          }
+          .flex-caption {
+            width: 370px;
+          }
+          .flex-caption.slide-1566307026560 {
+            position: absolute;
+            top: 82%;
+            left: 17%;
+            -webkit-transform: translate(-185px, -82%);
+            -ms-transform: translate(-185px, -82%);
+            -moz-transform: translate(-185px, -82%);
+            -o-transform: translate(-185px, -82%);
+            transform: translate(-185px, -82%);
+          }
+
+          .flex-caption.slide-1566307026560 .caption-inners {
+            
+            
+            
+            
+              background: transparent;
+            
+            display: inline-block;
+            padding: 20px;
+            text-align: center;
+          }
+
+          .flex-caption.slide-1566307026560 h2.slide-title {
+            color: #000000;
+          }
+          .flex-caption.slide-1566307026560 p {
+            color: #000000;
+          }
+          .flex-caption.slide-1566307026560 .cta a {
+            color: #ffffff;
+            background: #000000;
+          }
+          #flexslider--1559067219938 .flex-caption .cta a {
+            font-size: 14px;
+            font-weight: 400;
+          }
+          #flexslider--1559067219938 .flex-caption h2.slide-title {
+            font-size: 28px;
+            font-weight:700;
+          }
+          #flexslider--1559067219938 .flex-caption p {
+            font-size: 18px;
+          }
+          .no-js .slide_image {
+            opacity: 1;
+          }
+
+          @media only screen and (max-width: 740px) {
+
+            
+              .slide--1566307026560 .desktop-image .box-ratio {
+                padding-bottom: 360px !important;
+              }
+              .slide--1566307026560 .desktop-image img {
+                object-fit: cover;
+                object-position: center;
+                height: 360px !important;
+              }
+              .slide--1566307026560 .desktop-image {
+                display: block;
+              }
+              .flex-caption.slide-1566307026560 {
+                position: relative !important;
+                padding: 0 0 0 0 !important;
+                left: 0 !important;
+                top: 0 !important;
+                webkit-transform: translate(0,0);
+                -ms-transform: translate(0,0);
+                -moz-transform: translate(0,0);
+                -o-transform: translate(0,0);
+                transform: translate(0,0);
+              }
+            
+            .flex-caption {
+              width: 100%;
+            }
+            
+            .flex-control-nav {
+              display: none;
+            }
+            .flex-direction-nav a {
+              top: 40% !important;
+            }
+            .caption-inners {
+              text-align: center !important;
+            }
+            .caption-inners h2, .caption-inners p {
+              color: #000000 !important;
+            }
+          }
+        </style>
+      
+    </ul>
+  </div>
+
+
+</section>
+<div class="clear"></div>
+
+
+
+</div><div id="shopify-section-1561574067213" class="shopify-section index-section"><section class="homepage-gallery-1561574067213"
+data-section-id="1561574067213"
+data-aos="fade-up">
+  
+  <div class="section-title row">
+    <h2>
+      <a href="">
+        COLLECTIONS
+      </a>
+    </h2>
+  </div>
+  
+
+  
+  <article id="promo-images" class="row">
+    
+      
+      <div class="pimg homepage-promo desktop-3 tablet-fourth mobile-3 promo-1561574067213-0" >
+        
+          <div class="promo-inner">
+            
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.65374176037224%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_0977_{width}x.jpg?v=1613525936"
+      data-sizes="auto"
+      alt="">
+  </div>
+              <noscript>
+                <img src="//fridaskart.is/cdn/shop/files/IMG_0977_800x.jpg?v=1613525936" alt="">
+              </noscript>
+            
+            <div class="caption">
+              <div class="caption-content">
+                
+                  <p>
+                    CELTS &amp; KINGS
+                  </p>
+                
+                
+                  <span class="cta">
+                    <a href="/collections/celts-kings">SHOP</a>
+                  </span>
+                
+               </div>
+            </div>
+          </div>
+        
+        <style>
+          .homepage-promo.promo-1561574067213-0 .promo-inner p {
+            color: #000000;
+          }
+          .homepage-promo .promo-inner .cta a {
+            font-size: 14px;
+          }
+          
+          .homepage-promo.promo-1561574067213-0 .promo-inner .cta a {
+            color: #ffffff;
+            background: #000000;
+          }
+          
+          .homepage-promo.promo-1561574067213-0 .promo-inner .caption {
+            margin-top: 10px;
+          }
+          
+
+
+          /* IMAGE BLOCKS */
+          section.homepage-gallery-1561574067213 {
+            background-color: #ffffff;
+          }
+
+          section.homepage-gallery-1561574067213,
+          section.homepage-gallery-1561574067213 .caption p {
+            font-size: 27px;
+            font-weight: bold;
+          }
+        </style>
+      </div>
+    
+      
+      <div class="pimg homepage-promo desktop-3 tablet-fourth mobile-3 promo-1561574067213-1" >
+        
+          <div class="promo-inner">
+            
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.65807117070655%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_4172_6f3006da-17f7-42f8-b759-c234d39bb703_{width}x.jpg?v=1740500429"
+      data-sizes="auto"
+      alt="">
+  </div>
+              <noscript>
+                <img src="//fridaskart.is/cdn/shop/files/IMG_4172_6f3006da-17f7-42f8-b759-c234d39bb703_800x.jpg?v=1740500429" alt="">
+              </noscript>
+            
+            <div class="caption">
+              <div class="caption-content">
+                
+                  <p>
+                    KNITTING
+                  </p>
+                
+                
+                  <span class="cta">
+                    <a href="/collections/knitting">SHOP</a>
+                  </span>
+                
+               </div>
+            </div>
+          </div>
+        
+        <style>
+          .homepage-promo.promo-1561574067213-1 .promo-inner p {
+            color: #000000;
+          }
+          .homepage-promo .promo-inner .cta a {
+            font-size: 14px;
+          }
+          
+          .homepage-promo.promo-1561574067213-1 .promo-inner .cta a {
+            color: #fff9f9;
+            background: #000000;
+          }
+          
+          .homepage-promo.promo-1561574067213-1 .promo-inner .caption {
+            margin-top: 10px;
+          }
+          
+
+
+          /* IMAGE BLOCKS */
+          section.homepage-gallery-1561574067213 {
+            background-color: #ffffff;
+          }
+
+          section.homepage-gallery-1561574067213,
+          section.homepage-gallery-1561574067213 .caption p {
+            font-size: 27px;
+            font-weight: bold;
+          }
+        </style>
+      </div>
+    
+      
+      <div class="pimg homepage-promo desktop-3 tablet-fourth mobile-3 promo-1561574067213-2" >
+        
+          <div class="promo-inner">
+            
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.6565349544073%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_2927_{width}x.jpg?v=1613525937"
+      data-sizes="auto"
+      alt="">
+  </div>
+              <noscript>
+                <img src="//fridaskart.is/cdn/shop/files/IMG_2927_800x.jpg?v=1613525937" alt="">
+              </noscript>
+            
+            <div class="caption">
+              <div class="caption-content">
+                
+                  <p>
+                    SEASHELLS
+                  </p>
+                
+                
+                  <span class="cta">
+                    <a href="/collections/conches">SHOP</a>
+                  </span>
+                
+               </div>
+            </div>
+          </div>
+        
+        <style>
+          .homepage-promo.promo-1561574067213-2 .promo-inner p {
+            color: #000000;
+          }
+          .homepage-promo .promo-inner .cta a {
+            font-size: 14px;
+          }
+          
+          .homepage-promo.promo-1561574067213-2 .promo-inner .cta a {
+            color: #ffffff;
+            background: #000000;
+          }
+          
+          .homepage-promo.promo-1561574067213-2 .promo-inner .caption {
+            margin-top: 10px;
+          }
+          
+
+
+          /* IMAGE BLOCKS */
+          section.homepage-gallery-1561574067213 {
+            background-color: #ffffff;
+          }
+
+          section.homepage-gallery-1561574067213,
+          section.homepage-gallery-1561574067213 .caption p {
+            font-size: 27px;
+            font-weight: bold;
+          }
+        </style>
+      </div>
+    
+      
+      <div class="pimg homepage-promo desktop-3 tablet-fourth mobile-3 promo-040e5caa-64c8-488a-8450-9abfba0fc7df" >
+        
+          <div class="promo-inner">
+            
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.66666666666666%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_2276_{width}x.jpg?v=1740500852"
+      data-sizes="auto"
+      alt="">
+  </div>
+              <noscript>
+                <img src="//fridaskart.is/cdn/shop/files/IMG_2276_800x.jpg?v=1740500852" alt="">
+              </noscript>
+            
+            <div class="caption">
+              <div class="caption-content">
+                
+                  <p>
+                    CREATURES FROM THE PAST
+                  </p>
+                
+                
+                  <span class="cta">
+                    <a href="/collections/creatures-from-the-past">SHOP</a>
+                  </span>
+                
+               </div>
+            </div>
+          </div>
+        
+        <style>
+          .homepage-promo.promo-040e5caa-64c8-488a-8450-9abfba0fc7df .promo-inner p {
+            color: #000000;
+          }
+          .homepage-promo .promo-inner .cta a {
+            font-size: 14px;
+          }
+          
+          .homepage-promo.promo-040e5caa-64c8-488a-8450-9abfba0fc7df .promo-inner .cta a {
+            color: #ffffff;
+            background: #000000;
+          }
+          
+          .homepage-promo.promo-040e5caa-64c8-488a-8450-9abfba0fc7df .promo-inner .caption {
+            margin-top: 10px;
+          }
+          
+
+
+          /* IMAGE BLOCKS */
+          section.homepage-gallery-1561574067213 {
+            background-color: #ffffff;
+          }
+
+          section.homepage-gallery-1561574067213,
+          section.homepage-gallery-1561574067213 .caption p {
+            font-size: 27px;
+            font-weight: bold;
+          }
+        </style>
+      </div>
+    
+    
+  </article>
+  
+</section>
+
+
+
+
+</div><div id="shopify-section-1566382428277" class="shopify-section index-section"><section class="homepage-gallery-1566382428277"
+data-section-id="1566382428277"
+data-aos="fade-up">
+  
+
+  
+  <article id="promo-images" class="row">
+    
+      
+      <div class="pimg homepage-promo desktop-3 tablet-fourth mobile-3 promo-4e3208e5-b325-4eb7-9fe4-1c3b576ebd2a" >
+        
+          <div class="promo-inner">
+            
+              
+  
+<div class="box-ratio" style="padding-bottom: 53.8213399503722%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_0506_{width}x.jpg?v=1757688270"
+      data-sizes="auto"
+      alt="">
+  </div>
+              <noscript>
+                <img src="//fridaskart.is/cdn/shop/files/IMG_0506_800x.jpg?v=1757688270" alt="">
+              </noscript>
+            
+            <div class="caption">
+              <div class="caption-content">
+                
+                  <p>
+                    THE TRAVELER
+                  </p>
+                
+                
+                  <span class="cta">
+                    <a href="/collections/the-traveler">SHOP</a>
+                  </span>
+                
+               </div>
+            </div>
+          </div>
+        
+        <style>
+          .homepage-promo.promo-4e3208e5-b325-4eb7-9fe4-1c3b576ebd2a .promo-inner p {
+            color: #000000;
+          }
+          .homepage-promo .promo-inner .cta a {
+            font-size: 14px;
+          }
+          
+          .homepage-promo.promo-4e3208e5-b325-4eb7-9fe4-1c3b576ebd2a .promo-inner .cta a {
+            color: #ffffff;
+            background: #000000;
+          }
+          
+          .homepage-promo.promo-4e3208e5-b325-4eb7-9fe4-1c3b576ebd2a .promo-inner .caption {
+            margin-top: 10px;
+          }
+          
+
+
+          /* IMAGE BLOCKS */
+          section.homepage-gallery-1566382428277 {
+            background-color: #ffffff;
+          }
+
+          section.homepage-gallery-1566382428277,
+          section.homepage-gallery-1566382428277 .caption p {
+            font-size: 24px;
+            font-weight: bold;
+          }
+        </style>
+      </div>
+    
+      
+      <div class="pimg homepage-promo desktop-3 tablet-fourth mobile-3 promo-1566382428277-0" >
+        
+          <div class="promo-inner">
+            
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.67554608417687%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_4152_{width}x.jpg?v=1613525937"
+      data-sizes="auto"
+      alt="">
+  </div>
+              <noscript>
+                <img src="//fridaskart.is/cdn/shop/files/IMG_4152_800x.jpg?v=1613525937" alt="">
+              </noscript>
+            
+            <div class="caption">
+              <div class="caption-content">
+                
+                  <p>
+                    BUBBLE SEAWEED
+                  </p>
+                
+                
+                  <span class="cta">
+                    <a href="/collections/bubble-seaweed">SHOP</a>
+                  </span>
+                
+               </div>
+            </div>
+          </div>
+        
+        <style>
+          .homepage-promo.promo-1566382428277-0 .promo-inner p {
+            color: #000000;
+          }
+          .homepage-promo .promo-inner .cta a {
+            font-size: 14px;
+          }
+          
+          .homepage-promo.promo-1566382428277-0 .promo-inner .cta a {
+            color: #ffffff;
+            background: #000000;
+          }
+          
+          .homepage-promo.promo-1566382428277-0 .promo-inner .caption {
+            margin-top: 10px;
+          }
+          
+
+
+          /* IMAGE BLOCKS */
+          section.homepage-gallery-1566382428277 {
+            background-color: #ffffff;
+          }
+
+          section.homepage-gallery-1566382428277,
+          section.homepage-gallery-1566382428277 .caption p {
+            font-size: 24px;
+            font-weight: bold;
+          }
+        </style>
+      </div>
+    
+      
+      <div class="pimg homepage-promo desktop-3 tablet-fourth mobile-3 promo-1566382428277-1" >
+        
+          <div class="promo-inner">
+            
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.65120593692022%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_6992_{width}x.jpg?v=1613525937"
+      data-sizes="auto"
+      alt="">
+  </div>
+              <noscript>
+                <img src="//fridaskart.is/cdn/shop/files/IMG_6992_800x.jpg?v=1613525937" alt="">
+              </noscript>
+            
+            <div class="caption">
+              <div class="caption-content">
+                
+                  <p>
+                    ACANTHUS
+                  </p>
+                
+                
+                  <span class="cta">
+                    <a href="/collections/acanthus">SHOP</a>
+                  </span>
+                
+               </div>
+            </div>
+          </div>
+        
+        <style>
+          .homepage-promo.promo-1566382428277-1 .promo-inner p {
+            color: #000000;
+          }
+          .homepage-promo .promo-inner .cta a {
+            font-size: 14px;
+          }
+          
+          .homepage-promo.promo-1566382428277-1 .promo-inner .cta a {
+            color: #ffffff;
+            background: #000000;
+          }
+          
+          .homepage-promo.promo-1566382428277-1 .promo-inner .caption {
+            margin-top: 10px;
+          }
+          
+
+
+          /* IMAGE BLOCKS */
+          section.homepage-gallery-1566382428277 {
+            background-color: #ffffff;
+          }
+
+          section.homepage-gallery-1566382428277,
+          section.homepage-gallery-1566382428277 .caption p {
+            font-size: 24px;
+            font-weight: bold;
+          }
+        </style>
+      </div>
+    
+      
+      <div class="pimg homepage-promo desktop-3 tablet-fourth mobile-3 promo-1566382428277-2" >
+        
+          <div class="promo-inner">
+            
+              
+  
+<div class="box-ratio" style="padding-bottom: 66.66666666666666%;">
+    <img class="lazyload lazyload-fade"
+      id=""
+      data-src="//fridaskart.is/cdn/shop/files/IMG_4111_{width}x.jpg?v=1613525937"
+      data-sizes="auto"
+      alt="">
+  </div>
+              <noscript>
+                <img src="//fridaskart.is/cdn/shop/files/IMG_4111_800x.jpg?v=1613525937" alt="">
+              </noscript>
+            
+            <div class="caption">
+              <div class="caption-content">
+                
+                  <p>
+                    MOLECULE
+                  </p>
+                
+                
+                  <span class="cta">
+                    <a href="/collections/molecule">SHOP</a>
+                  </span>
+                
+               </div>
+            </div>
+          </div>
+        
+        <style>
+          .homepage-promo.promo-1566382428277-2 .promo-inner p {
+            color: #000000;
+          }
+          .homepage-promo .promo-inner .cta a {
+            font-size: 14px;
+          }
+          
+          .homepage-promo.promo-1566382428277-2 .promo-inner .cta a {
+            color: #ffffff;
+            background: #000000;
+          }
+          
+          .homepage-promo.promo-1566382428277-2 .promo-inner .caption {
+            margin-top: 10px;
+          }
+          
+
+
+          /* IMAGE BLOCKS */
+          section.homepage-gallery-1566382428277 {
+            background-color: #ffffff;
+          }
+
+          section.homepage-gallery-1566382428277,
+          section.homepage-gallery-1566382428277 .caption p {
+            font-size: 24px;
+            font-weight: bold;
+          }
+        </style>
+      </div>
+    
+    
+  </article>
+  
+</section>
+
+
+
+
+</div><div id="shopify-section-1559241649775" class="shopify-section index-section"><section id="page" class="lookbook animate wow fadeIn no-fouc" data-section-id="1559241649775" >
+  
+  <div class="gridlock-fluid"><div class="row">
+  <div class="row">
+    
+
+    
+<div class="lookbook-image-1559241649775-0 homepage-promo desktop-8 tablet-4 mobile-3 promo-1559241649775-0" >
+        <div class="image-inner">
+          
+          
+          <img src="//fridaskart.is/cdn/shop/files/IMG_0904-Edit_1200x.jpg?v=1613522175">
+          
+          
+        </div>
+
+        
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+      </div>
+    
+
+    <style>
+    .index #page {
+      margin-bottom: 0;
+    }
+    .lookbook .image-inner img { width: 100%; }
+      
+      .lookbook-image-1559241649775-0 {
+        position: relative;
+        margin-bottom: 2.082%;
+      }
+    </style>
+    
+
+  
+    
+
+    
+<div class="lookbook-image-1559329188875 homepage-promo desktop-4 tablet-2 mobile-3 promo-1559329188875" >
+        <div class="image-inner">
+          
+          
+          <img src="//fridaskart.is/cdn/shop/files/kud5_1200x.jpeg?v=1613522176">
+          
+          
+        </div>
+
+        
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+      </div>
+    
+
+    <style>
+    .index #page {
+      margin-bottom: 0;
+    }
+    .lookbook .image-inner img { width: 100%; }
+      
+      .lookbook-image-1559329188875 {
+        position: relative;
+        margin-bottom: 2.082%;
+      }
+    </style>
+    
+
+  
+    
+
+    
+<div class="lookbook-image-1561657232664 homepage-promo desktop-4 tablet-2 mobile-3 promo-1561657232664" >
+        <div class="image-inner">
+          
+          
+          <img src="//fridaskart.is/cdn/shop/files/Frida-Gull-783-2_1200x.jpg?v=1613522175">
+          
+          
+        </div>
+
+        
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+      </div>
+    
+
+    <style>
+    .index #page {
+      margin-bottom: 0;
+    }
+    .lookbook .image-inner img { width: 100%; }
+      
+      .lookbook-image-1561657232664 {
+        position: relative;
+        margin-bottom: 2.082%;
+      }
+    </style>
+    
+
+  
+    
+
+    
+<div class="lookbook-image-1559241649775-1 homepage-promo desktop-4 tablet-2 mobile-3 promo-1559241649775-1" >
+        <div class="image-inner">
+          
+          
+          <img src="//fridaskart.is/cdn/shop/files/IMG_4504_1200x.jpg?v=1613525937">
+          
+          
+        </div>
+
+        
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+      </div>
+    
+
+    <style>
+    .index #page {
+      margin-bottom: 0;
+    }
+    .lookbook .image-inner img { width: 100%; }
+      
+      .lookbook-image-1559241649775-1 {
+        position: relative;
+        margin-bottom: 2.082%;
+      }
+    </style>
+    
+
+  
+    
+
+    
+<div class="lookbook-image-1559241649775-2 homepage-promo desktop-4 tablet-2 mobile-3 promo-1559241649775-2" >
+        <div class="image-inner">
+          
+          
+          <img src="//fridaskart.is/cdn/shop/files/Frida-Gull-900_1200x.JPG?v=1615922787">
+          
+          
+        </div>
+
+        
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+      </div>
+    
+
+    <style>
+    .index #page {
+      margin-bottom: 0;
+    }
+    .lookbook .image-inner img { width: 100%; }
+      
+      .lookbook-image-1559241649775-2 {
+        position: relative;
+        margin-bottom: 2.082%;
+      }
+    </style>
+    
+
+  
+    
+
+    
+<div class="lookbook-image-1559247911672 homepage-promo desktop-4 tablet-2 mobile-3 promo-1559247911672" >
+        <div class="image-inner">
+          
+          
+          <img src="//fridaskart.is/cdn/shop/files/IMG_2642-Edit_1200x.jpg?v=1613525936">
+          
+          
+        </div>
+
+        
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+      </div>
+    
+
+    <style>
+    .index #page {
+      margin-bottom: 0;
+    }
+    .lookbook .image-inner img { width: 100%; }
+      
+      .lookbook-image-1559247911672 {
+        position: relative;
+        margin-bottom: 2.082%;
+      }
+    </style>
+    
+
+  
+    
+
+    
+<div class="lookbook-image-1574026139472 homepage-promo desktop-4 tablet-2 mobile-3 promo-1574026139472" >
+        <div class="image-inner">
+          
+          
+          <img src="//fridaskart.is/cdn/shop/files/Frida-Gull-860_1200x.JPG?v=1615922787">
+          
+          
+        </div>
+
+        
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+      </div>
+    
+
+    <style>
+    .index #page {
+      margin-bottom: 0;
+    }
+    .lookbook .image-inner img { width: 100%; }
+      
+      .lookbook-image-1574026139472 {
+        position: relative;
+        margin-bottom: 2.082%;
+      }
+    </style>
+    
+
+  
+    
+
+    
+<div class="lookbook-image-1574026201922 homepage-promo desktop-4 tablet-2 mobile-3 promo-1574026201922" >
+        <div class="image-inner">
+          
+          
+          <img src="//fridaskart.is/cdn/shop/files/IMG_0943_1200x.jpg?v=1613525937">
+          
+          
+        </div>
+
+        
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+          
+          
+          
+          
+          
+          
+
+          
+       
+      </div>
+    
+
+    <style>
+    .index #page {
+      margin-bottom: 0;
+    }
+    .lookbook .image-inner img { width: 100%; }
+      
+      .lookbook-image-1574026201922 {
+        position: relative;
+        margin-bottom: 2.082%;
+      }
+    </style>
+    
+
+  
+
+  </div>
+  </div></div>
+</section>
+<div class="clear"></div>
+
+
+
+</div><div id="shopify-section-1546484955720" class="shopify-section index-section">
+
+<script id="instagram-template" type="text/template">
+  
+    <div class="all-fifth tablet-1 mobile-1 contained">
+      <a style="background: url({{image}}); background-size: cover;" class="instagram-image-container" target="_blank" href="{{link}}" rel="ig" title="{{caption}}">
+        <img style="opacity: 0! important;" class="instagram-image" src="{{image}}" />
+      </a>
+    </div>
+  
+</script>
+<section class="homepage-instagram" data-section-id="1546484955720" data-section-type="instagram">
+  
+  
+  
+  
+
+  <article>
+    
+      <div class="section-title row">
+        <h2>
+					<a href="//instagram.com/fridajewels">
+						FOLLOW US ON INSTAGRAM
+					</a>
+				</h2>
+      </div>
+    
+    <div class="gridlock-fluid">
+      <div class="row">
+        <div class="row">
+          
+          
+          <div class="clear"></div>
+          <div id="instagram-feed">
+            
+            	<div id="instafeed-1546484955720" data-item-limit="5" data-access-token="2276125209.5ea0515.ee3bd69c389943b8b707608bedcfc625"></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+<style>
+  /* INSTAGRAM */
+  .homepage-instagram {
+    background: #ffffff;
+    z-index: 3;
+    padding-bottom: 0;
+  }
+  .homepage-instagram h2,
+  .homepage-instagram h2 a {
+    color: #000000 !important;
+  }
+  .instagram-image-container {
+    display: block;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    margin-bottom: 0px;
+  }
+  
+</style>
+
+</div><!-- END content_for_index -->
+</div>
+
+      
+    </div>
+
+    
+
+    
+
+    <div id="shopify-section-footer" class="shopify-section"><footer data-section-id="footer">
+  <div id="footer-wrapper">
+    <div id="footer" class="row">
+    
+
+      
+      
+      <div class="desktop-3 tablet-3 mobile-3 footer-menu">
+        <label for="menu-item-1"><h4>SHOP BY CATEGORY</h4></label><br><input type="checkbox" id="menu-item-1">
+        <div class="footer-block-content">
+          <ul >
+            
+              <li><a href="/collections/bracelet" title="">BRACELETS</a></li>
+            
+              <li><a href="/collections/earrings" title="">EARRINGS</a></li>
+            
+              <li><a href="/collections/necklaces" title="">NECKLACES</a></li>
+            
+              <li><a href="/collections/rings" title="">RINGS</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      <style>
+        input#menu-item-1 {
+          display: none;
+          position: relative;
+        }
+        @media screen and (max-width: 740px) {
+          .footer-block-content {
+            display: none;
+          }
+          #menu-item-1:checked ~ .footer-block-content {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+          }
+       }
+</style>
+      
+      
+      <div class="desktop-3 tablet-3 mobile-3 footer-menu">
+        <label for="menu-item-2"><h4>SHOP BY COLLECTION</h4></label><br><input type="checkbox" id="menu-item-2">
+        <div class="footer-block-content">
+          <ul >
+            
+              <li><a href="/collections/acanthus" title="">ACANTHUS</a></li>
+            
+              <li><a href="/collections/bubble-seaweed" title="">BUBBLE SEAWEED</a></li>
+            
+              <li><a href="/collections/celts-kings" title="">CELTS & KINGS</a></li>
+            
+              <li><a href="/collections/the-comb" title="">THE COMB</a></li>
+            
+              <li><a href="/collections/conches" title="">SEASHELLS</a></li>
+            
+              <li><a href="/collections/knitting" title="">KNITTING</a></li>
+            
+              <li><a href="/collections/molecule" title="">MOLECULE</a></li>
+            
+              <li><a href="/collections/creatures-from-the-past" title="">CREATURES FROM THE PAST</a></li>
+            
+              <li><a href="/collections/the-traveler" title="">THE TRAVELER</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      <style>
+        input#menu-item-2 {
+          display: none;
+          position: relative;
+        }
+        @media screen and (max-width: 740px) {
+          .footer-block-content {
+            display: none;
+          }
+          #menu-item-2:checked ~ .footer-block-content {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+          }
+       }
+</style>
+      
+      
+      <div class="desktop-3 tablet-3 mobile-3 footer-menu">
+        <label for="menu-item-3"><h4>ABOUT</h4></label><br><input type="checkbox" id="menu-item-3">
+        <div class="footer-block-content">
+          <ul >
+            
+              <li><a href="/pages/about-us" title="">ABOUT US</a></li>
+            
+              <li><a href="/pages/contact-us" title="">CONTACT US</a></li>
+            
+              <li><a href="/pages/faq" title="">FAQs</a></li>
+            
+              <li><a href="/pages/sizing" title="">SIZING</a></li>
+            
+              <li><a href="/pages/shipping-returns" title="">SHIPPING & RETURNS</a></li>
+            
+              <li><a href="https://fridaskart.is/pages/sustainability" title="">SUSTAINABILITY</a></li>
+            
+              <li><a href="https://fridaskart.is/pages/terms-of-service" title="">TERMS OF SERVICE</a></li>
+            
+              <li><a href="https://fridaskart.is/pages/privacy-policy" title="">PRIVACY POLICY</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      <style>
+        input#menu-item-3 {
+          display: none;
+          position: relative;
+        }
+        @media screen and (max-width: 740px) {
+          .footer-block-content {
+            display: none;
+          }
+          #menu-item-3:checked ~ .footer-block-content {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+          }
+       }
+</style>
+      
+      
+      <div class="desktop-3 tablet-3 mobile-3 footer-menu">
+        <label for="menu-item-4"><h4>VISIT US</h4></label><br><input type="checkbox" id="menu-item-4">
+        <div class="rte footer-block-content"><p>Skólavörðustígur 18<br/>101 Reykjavík <br/>Iceland</p><p>Fridaskart@fridaskart.is</p><p>+354 898 8801</p><p><a href="https://goo.gl/maps/6egEB57P7Vhfs4S88" title="https://goo.gl/maps/6egEB57P7Vhfs4S88">Find us on Google Maps</a></p><p></p><p><strong>Store Opening Hours</strong></p><p>Monday-Friday: 11:00 - 17:00<br/>Saturday: 11:00 - 16:00<br/>Closed on Sundays</p></div>
+      </div>
+      
+      <style>
+        input#menu-item-4 {
+          display: none;
+          position: relative;
+        }
+        @media screen and (max-width: 740px) {
+          .footer-block-content {
+            display: none;
+          }
+          #menu-item-4:checked ~ .footer-block-content {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+          }
+       }
+</style>
+      
+
+      <div class="clear"></div>
+      <ul id="footer-icons" class="desktop-12 tablet-6 mobile-3">
+        
+          <li>
+            <a href="https://www.facebook.com/FridaJewels/" target="_blank">
+              <i class="fab fa-facebook-f la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+          <li>
+            <a href="//instagram.com/fridajewels" target="_blank">
+              <i class="la la-instagram la-2x" aria-hidden="true"></i>
+            </a>
+          </li>
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+      <div class="clear"></div>
+      <div class="credit desktop-12 tablet-6 mobile-3">
+
+        <div id="payment">
+          
+            
+              <svg class="payment-icon" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img" width="38" height="24" aria-labelledby="pi-diners_club"><title id="pi-diners_club">Diners Club</title><path opacity=".07" d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z"/><path fill="#fff" d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32"/><path d="M12 12v3.7c0 .3-.2.3-.5.2-1.9-.8-3-3.3-2.3-5.4.4-1.1 1.2-2 2.3-2.4.4-.2.5-.1.5.2V12zm2 0V8.3c0-.3 0-.3.3-.2 2.1.8 3.2 3.3 2.4 5.4-.4 1.1-1.2 2-2.3 2.4-.4.2-.4.1-.4-.2V12zm7.2-7H13c3.8 0 6.8 3.1 6.8 7s-3 7-6.8 7h8.2c3.8 0 6.8-3.1 6.8-7s-3-7-6.8-7z" fill="#3086C8"/></svg>
+            
+              <svg class="payment-icon" width="38" height="24" role="img" aria-labelledby="pi-jcb" viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg"><title id="pi-jcb">JCB</title><g fill="none" fill-rule="evenodd"><g fill-rule="nonzero"><path d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" fill="#000" opacity=".07"/><path d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" fill="#FFF"/></g><path d="M11.5 5H15v11.5a2.5 2.5 0 0 1-2.5 2.5H9V7.5A2.5 2.5 0 0 1 11.5 5z" fill="#006EBC"/><path d="M18.5 5H22v11.5a2.5 2.5 0 0 1-2.5 2.5H16V7.5A2.5 2.5 0 0 1 18.5 5z" fill="#F00036"/><path d="M25.5 5H29v11.5a2.5 2.5 0 0 1-2.5 2.5H23V7.5A2.5 2.5 0 0 1 25.5 5z" fill="#2AB419"/><path d="M10.755 14.5c-1.06 0-2.122-.304-2.656-.987l.78-.676c.068 1.133 3.545 1.24 3.545-.19V9.5h1.802v3.147c0 .728-.574 1.322-1.573 1.632-.466.144-1.365.221-1.898.221zm8.116 0c-.674 0-1.388-.107-1.965-.366-.948-.425-1.312-1.206-1.3-2.199.012-1.014.436-1.782 1.468-2.165 1.319-.49 3.343-.261 3.926.27v.972c-.572-.521-1.958-.898-2.919-.46-.494.226-.737.917-.744 1.448-.006.56.245 1.252.744 1.497.953.467 2.39.04 2.919-.441v1.01c-.358.255-1.253.434-2.129.434zm8.679-2.587c.37-.235.582-.567.582-1.005 0-.438-.116-.687-.348-.939-.206-.207-.58-.469-1.238-.469H23v5h3.546c.696 0 1.097-.23 1.315-.415.283-.25.426-.53.426-.96 0-.431-.155-.908-.737-1.212zm-1.906-.281h-1.428v-1.444h1.495c.956 0 .944 1.444-.067 1.444zm.288 2.157h-1.716v-1.513h1.716c.986 0 1.083 1.513 0 1.513z" fill="#FFF" fill-rule="nonzero"/></g></svg>
+            
+              <svg class="payment-icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" fill="none" aria-labelledby="pi-master"><title id="pi-master">Mastercard</title><rect x=".5" y=".5" width="37" height="23" rx="2.5" stroke="#000" stroke-opacity=".07" fill="none"/><path d="M35 0H3C1.3 0 0 1.3 0 3V21C0 22.7 1.4 24 3 24H35C36.7 24 38 22.7 38 21V3C38 1.3 36.6 0 35 0Z" fill="#1C1C1C" style="fill:#1C1C1C;fill:color(display-p3 0.1098 0.1098 0.1098);fill-opacity:1;"/><path d="M35 1C36.1 1 37 1.9 37 3V21C37 22.1 36.1 23 35 23H3C1.9 23 1 22.1 1 21V3C1 1.9 1.9 1 3 1H35Z" fill="#232323" style="fill:#232323;fill:color(display-p3 0.1373 0.1373 0.1373);fill-opacity:1;"/><path d="M14.6364 19.2727C18.8538 19.2727 22.2727 15.8538 22.2727 11.6364C22.2727 7.41892 18.8538 4 14.6364 4C10.4189 4 7 7.41892 7 11.6364C7 15.8538 10.4189 19.2727 14.6364 19.2727Z" fill="#EB001B" style="fill:#EB001B;fill:color(display-p3 0.9216 0.0000 0.1059);fill-opacity:1;"/><path d="M23.3637 19.2727C27.5811 19.2727 31 15.8538 31 11.6364C31 7.41892 27.5811 4 23.3637 4C19.1462 4 15.7273 7.41892 15.7273 11.6364C15.7273 15.8538 19.1462 19.2727 23.3637 19.2727Z" fill="#F79E1B" style="fill:#F79E1B;fill:color(display-p3 0.9686 0.6196 0.1059);fill-opacity:1;"/><path d="M22.2727 11.6362C22.2727 9.01797 20.9637 6.72706 19 5.41797C17.0364 6.83615 15.7273 9.12706 15.7273 11.6362C15.7273 14.1452 17.0364 16.5452 19 17.8543C20.9637 16.5452 22.2727 14.2543 22.2727 11.6362Z" fill="#FF5F00" style="fill:#FF5F00;fill:color(display-p3 1.0000 0.3725 0.0000);fill-opacity:1;"/></svg>
+
+            
+              <svg class="payment-icon" viewBox="-36 25 38 24" xmlns="http://www.w3.org/2000/svg" width="38" height="24" role="img" aria-labelledby="pi-unionpay"><title id="pi-unionpay">Union Pay</title><path fill="#005B9A" d="M-36 46.8v.7-.7zM-18.3 25v24h-7.2c-1.3 0-2.1-1-1.8-2.3l4.4-19.4c.3-1.3 1.9-2.3 3.2-2.3h1.4zm12.6 0c-1.3 0-2.9 1-3.2 2.3l-4.5 19.4c-.3 1.3.5 2.3 1.8 2.3h-4.9V25h10.8z"/><path fill="#E9292D" d="M-19.7 25c-1.3 0-2.9 1.1-3.2 2.3l-4.4 19.4c-.3 1.3.5 2.3 1.8 2.3h-8.9c-.8 0-1.5-.6-1.5-1.4v-21c0-.8.7-1.6 1.5-1.6h14.7z"/><path fill="#0E73B9" d="M-5.7 25c-1.3 0-2.9 1.1-3.2 2.3l-4.4 19.4c-.3 1.3.5 2.3 1.8 2.3H-26h.5c-1.3 0-2.1-1-1.8-2.3l4.4-19.4c.3-1.3 1.9-2.3 3.2-2.3h14z"/><path fill="#059DA4" d="M2 26.6v21c0 .8-.6 1.4-1.5 1.4h-12.1c-1.3 0-2.1-1.1-1.8-2.3l4.5-19.4C-8.6 26-7 25-5.7 25H.5c.9 0 1.5.7 1.5 1.6z"/><path fill="#fff" d="M-21.122 38.645h.14c.14 0 .28-.07.28-.14l.42-.63h1.19l-.21.35h1.4l-.21.63h-1.68c-.21.28-.42.42-.7.42h-.84l.21-.63m-.21.91h3.01l-.21.7h-1.19l-.21.7h1.19l-.21.7h-1.19l-.28 1.05c-.07.14 0 .28.28.21h.98l-.21.7h-1.89c-.35 0-.49-.21-.35-.63l.35-1.33h-.77l.21-.7h.77l.21-.7h-.7l.21-.7zm4.83-1.75v.42s.56-.42 1.12-.42h1.96l-.77 2.66c-.07.28-.35.49-.77.49h-2.24l-.49 1.89c0 .07 0 .14.14.14h.42l-.14.56h-1.12c-.42 0-.56-.14-.49-.35l1.47-5.39h.91zm1.68.77h-1.75l-.21.7s.28-.21.77-.21h1.05l.14-.49zm-.63 1.68c.14 0 .21 0 .21-.14l.14-.35h-1.75l-.14.56 1.54-.07zm-1.19.84h.98v.42h.28c.14 0 .21-.07.21-.14l.07-.28h.84l-.14.49c-.07.35-.35.49-.77.56h-.56v.77c0 .14.07.21.35.21h.49l-.14.56h-1.19c-.35 0-.49-.14-.49-.49l.07-2.1zm4.2-2.45l.21-.84h1.19l-.07.28s.56-.28 1.05-.28h1.47l-.21.84h-.21l-1.12 3.85h.21l-.21.77h-.21l-.07.35h-1.19l.07-.35h-2.17l.21-.77h.21l1.12-3.85h-.28m1.26 0l-.28 1.05s.49-.21.91-.28c.07-.35.21-.77.21-.77h-.84zm-.49 1.54l-.28 1.12s.56-.28.98-.28c.14-.42.21-.77.21-.77l-.91-.07zm.21 2.31l.21-.77h-.84l-.21.77h.84zm2.87-4.69h1.12l.07.42c0 .07.07.14.21.14h.21l-.21.7h-.77c-.28 0-.49-.07-.49-.35l-.14-.91zm-.35 1.47h3.57l-.21.77h-1.19l-.21.7h1.12l-.21.77h-1.26l-.28.42h.63l.14.84c0 .07.07.14.21.14h.21l-.21.7h-.7c-.35 0-.56-.07-.56-.35l-.14-.77-.56.84c-.14.21-.35.35-.63.35h-1.05l.21-.7h.35c.14 0 .21-.07.35-.21l.84-1.26h-1.05l.21-.77h1.19l.21-.7h-1.19l.21-.77zm-19.74-5.04c-.14.7-.42 1.19-.91 1.54-.49.35-1.12.56-1.89.56-.7 0-1.26-.21-1.54-.56-.21-.28-.35-.56-.35-.98 0-.14 0-.35.07-.56l.84-3.92h1.19l-.77 3.92v.28c0 .21.07.35.14.49.14.21.35.28.7.28s.7-.07.91-.28c.21-.21.42-.42.49-.77l.77-3.92h1.19l-.84 3.92m1.12-1.54h.84l-.07.49.14-.14c.28-.28.63-.42 1.05-.42.35 0 .63.14.77.35.14.21.21.49.14.91l-.49 2.38h-.91l.42-2.17c.07-.28.07-.49 0-.56-.07-.14-.21-.14-.35-.14-.21 0-.42.07-.56.21-.14.14-.28.35-.28.63l-.42 2.03h-.91l.63-3.57m9.8 0h.84l-.07.49.14-.14c.28-.28.63-.42 1.05-.42.35 0 .63.14.77.35s.21.49.14.91l-.49 2.38h-.91l.42-2.24c.07-.21 0-.42-.07-.49-.07-.14-.21-.14-.35-.14-.21 0-.42.07-.56.21-.14.14-.28.35-.28.63l-.42 2.03h-.91l.7-3.57m-5.81 0h.98l-.77 3.5h-.98l.77-3.5m.35-1.33h.98l-.21.84h-.98l.21-.84zm1.4 4.55c-.21-.21-.35-.56-.35-.98v-.21c0-.07 0-.21.07-.28.14-.56.35-1.05.7-1.33.35-.35.84-.49 1.33-.49.42 0 .77.14 1.05.35.21.21.35.56.35.98v.21c0 .07 0 .21-.07.28-.14.56-.35.98-.7 1.33-.35.35-.84.49-1.33.49-.35 0-.7-.14-1.05-.35m1.89-.7c.14-.21.28-.49.35-.84v-.35c0-.21-.07-.35-.14-.49a.635.635 0 0 0-.49-.21c-.28 0-.49.07-.63.28-.14.21-.28.49-.35.84v.28c0 .21.07.35.14.49.14.14.28.21.49.21.28.07.42 0 .63-.21m6.51-4.69h2.52c.49 0 .84.14 1.12.35.28.21.35.56.35.91v.28c0 .07 0 .21-.07.28-.07.49-.35.98-.7 1.26-.42.35-.84.49-1.4.49h-1.4l-.42 2.03h-1.19l1.19-5.6m.56 2.59h1.12c.28 0 .49-.07.7-.21.14-.14.28-.35.35-.63v-.28c0-.21-.07-.35-.21-.42-.14-.07-.35-.14-.7-.14h-.91l-.35 1.68zm8.68 3.71c-.35.77-.7 1.26-.91 1.47-.21.21-.63.7-1.61.7l.07-.63c.84-.28 1.26-1.4 1.54-1.96l-.28-3.78h1.19l.07 2.38.91-2.31h1.05l-2.03 4.13m-2.94-3.85l-.42.28c-.42-.35-.84-.56-1.54-.21-.98.49-1.89 4.13.91 2.94l.14.21h1.12l.7-3.29-.91.07m-.56 1.82c-.21.56-.56.84-.91.77-.28-.14-.35-.63-.21-1.19.21-.56.56-.84.91-.77.28.14.35.63.21 1.19"/></svg>
+            
+              <svg class="payment-icon" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24" width="38" height="24" fill="none" aria-labelledby="pi-visa"><title id="pi-visa">Visa</title><rect x=".5" y=".5" width="37" height="23" rx="2.5" stroke="#000" stroke-opacity=".07" fill="none"/><path d="M35 0H3C1.3 0 0 1.3 0 3V21C0 22.7 1.4 24 3 24H35C36.7 24 38 22.7 38 21V3C38 1.3 36.6 0 35 0Z" fill="#142FBD" style="fill:#142FBD;fill:color(display-p3 0.0784 0.1843 0.7412);fill-opacity:1;"/><path d="M35 1C36.1 1 37 1.9 37 3V21C37 22.1 36.1 23 35 23H3C1.9 23 1 22.1 1 21V3C1 1.9 1.9 1 3 1H35Z" fill="#1532CB" style="fill:#1532CB;fill:color(display-p3 0.0824 0.1961 0.7961);fill-opacity:1;"/><path d="M29.5944 10.2167H29.2778C28.8556 11.2722 28.5389 11.8 28.2222 13.3833H30.2278C29.9111 11.8 29.9111 11.0611 29.5944 10.2167V10.2167ZM32.6556 16.4444H30.8611C30.7556 16.4444 30.7556 16.4444 30.65 16.3389L30.4389 15.3889L30.3333 15.1778H27.8C27.6944 15.1778 27.5889 15.1778 27.5889 15.3889L27.2722 16.3389C27.2722 16.4444 27.1667 16.4444 27.1667 16.4444H24.95L25.1611 15.9167L28.2222 8.73889C28.2222 8.21111 28.5389 8 29.0667 8H30.65C30.7556 8 30.8611 8 30.8611 8.21111L32.3389 15.0722C32.4444 15.4944 32.55 15.8111 32.55 16.2333C32.6556 16.3389 32.6556 16.3389 32.6556 16.4444V16.4444ZM18.5111 16.1278L18.9333 14.2278C19.0389 14.2278 19.1444 14.3333 19.1444 14.3333C19.8833 14.65 20.6222 14.8611 21.3611 14.7556C21.5722 14.7556 21.8889 14.65 22.1 14.5444C22.6278 14.3333 22.6278 13.8056 22.2056 13.3833C21.9944 13.1722 21.6778 13.0667 21.3611 12.8556C20.9389 12.6444 20.5167 12.4333 20.2 12.1167C18.9333 11.0611 19.3556 9.58333 20.0944 8.84444C20.7278 8.42222 21.0444 8 21.8889 8C23.1556 8 24.5278 8 25.1611 8.21111H25.2667C25.1611 8.84444 25.0556 9.37222 24.8444 10.0056C24.3167 9.79444 23.7889 9.58333 23.2611 9.58333C22.9444 9.58333 22.6278 9.58333 22.3111 9.68889C22.1 9.68889 21.9944 9.79444 21.8889 9.9C21.6778 10.1111 21.6778 10.4278 21.8889 10.6389L22.4167 11.0611C22.8389 11.2722 23.2611 11.4833 23.5778 11.6944C24.1056 12.0111 24.6333 12.5389 24.7389 13.1722C24.95 14.1222 24.6333 14.9667 23.7889 15.6C23.2611 16.0222 23.05 16.2333 22.3111 16.2333C20.8333 16.2333 19.6722 16.3389 18.7222 16.0222C18.6167 16.2333 18.6167 16.2333 18.5111 16.1278V16.1278ZM14.8167 16.4444C14.9222 15.7056 14.9222 15.7056 15.0278 15.3889C15.5556 13.0667 16.0833 10.6389 16.5056 8.31667C16.6111 8.10556 16.6111 8 16.8222 8H18.7222C18.5111 9.26667 18.3 10.2167 17.9833 11.3778C17.6667 12.9611 17.35 14.5444 16.9278 16.1278C16.9278 16.3389 16.8222 16.3389 16.6111 16.3389L14.8167 16.4444ZM5 8.21111C5 8.10556 5.21111 8 5.31667 8H8.90556C9.43333 8 9.85556 8.31667 9.96111 8.84444L10.9111 13.4889C10.9111 13.5944 10.9111 13.5944 11.0167 13.7C11.0167 13.5944 11.1222 13.5944 11.1222 13.5944L13.3389 8.21111C13.2333 8.10556 13.3389 8 13.4444 8H15.6611C15.6611 8.10556 15.6611 8.10556 15.5556 8.21111L12.2833 15.9167C12.1778 16.1278 12.1778 16.2333 12.0722 16.3389C11.9667 16.4444 11.7556 16.3389 11.5444 16.3389H9.96111C9.85556 16.3389 9.75 16.3389 9.75 16.1278L8.06111 9.58333C7.85 9.37222 7.53333 9.05556 7.11111 8.95C6.47778 8.63333 5.31667 8.42222 5.10556 8.42222L5 8.21111Z" fill="white" style="fill:white;fill-opacity:1;"/></svg>
+
+            
+          
+        </div>
+
+        <p>
+          <small><a href="/">&copy; 2026 FríðaSkart</a> • <a target="_blank" rel="nofollow" href="https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore">Powered by Shopify</a></small>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  #footer-wrapper {
+    text-align: left;
+  }
+</style>
+
+
+
+</div>
+
+    
+
+    
+
+  </div>
+  <div id="shopify-section-mobile-navigation" class="shopify-section"><nav class="shifter-navigation no-fouc" data-section-id="mobile-navigation" data-section-type="mobile-navigation">
+  
+  <div class="search">
+    <form role="search" action="/search" method="get">
+      <input type="hidden" name="type" value="product">
+      <input type="text" name="q" id="q" placeholder="Search" />
+    </form>
+  </div>
+  
+  <ul id="accordion" role="navigation">
+    
+      
+        <li>
+          <a href="/">
+            HOME
+          </a>
+        </li>
+      
+    
+      
+        <li class="accordion-toggle" aria-haspopup="true" aria-expanded="false">
+          <a href="/collections/all">
+            COLLECTIONS
+          </a>
+        </li>
+
+        <div class="accordion-content">
+          <ul class="sub">
+            
+              
+                <li>
+                  <a href="/collections/celts-kings">
+                    CELTS &amp; KINGS
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/the-comb">
+                    THE COMB
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/knitting">
+                    KNITTING
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/conches">
+                    SEASHELL
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/bubble-seaweed">
+                    BUBBLE SEAWEED
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/acanthus">
+                    ACANTHUS
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/molecule">
+                    MOLECULE
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/creatures-from-the-past">
+                    CREATURES FROM THE PAST
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/the-traveler">
+                    THE TRAVELER
+                  </a>
+                </li>
+              
+            
+          </ul>
+        </div>
+      
+    
+      
+        <li class="accordion-toggle" aria-haspopup="true" aria-expanded="false">
+          <a href="/collections/shop">
+            SHOP
+          </a>
+        </li>
+
+        <div class="accordion-content">
+          <ul class="sub">
+            
+              
+                <li>
+                  <a href="/collections/bracelet">
+                    BRACELETS
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/earrings">
+                    EARRINGS
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/necklaces">
+                    NECKLACES
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="/collections/rings">
+                    RINGS
+                  </a>
+                </li>
+              
+            
+          </ul>
+        </div>
+      
+    
+      
+        
+        <li>
+          <a href="/account/login">
+            Login or create an account
+          </a>
+        </li>
+        
+      
+  </ul>
+  <ul id="social-icons">
+  
+    <li>
+      <a href="https://www.facebook.com/FridaJewels/" target="_blank">
+        <i class="fab fa-facebook-f la-2x" aria-hidden="true"></i>
+      </a>
+    </li>
+  
+  
+    <li>
+      <a href="//instagram.com/fridajewels" target="_blank">
+        <i class="la la-instagram la-2x" aria-hidden="true"></i>
+      </a>
+    </li>
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+</nav>
+
+<style>
+  .shifter-enabled nav.shifter-navigation {
+      background: #ffffff;
+      color: #000000;
+  }
+  nav.shifter-navigation ul li a,
+  nav.shifter-navigation .accordion-toggle,
+  nav.shifter-navigation .accordion-toggle2,
+  nav.shifter-navigation .accordion-toggle2 a {
+    color: #000000;
+  }
+  ul#accordion li,
+  .accordion-toggle2 {
+    border-bottom: 1px solid #dedede;
+  }
+  
+    nav.shifter-navigation ul#social-icons li {
+      background: #000000;
+    }
+    nav.shifter-navigation ul#social-icons li a {
+      color: #ffffff;
+    }
+  
+</style>
+
+
+</div>
+
+  <a href="#" class="scrollup"><i class="la la-chevron-up" aria-hidden="true"></i> TOP</a>
+
+  <div class="fancybox-wrapper"></div>
+  <div class="clear"></div>
+
+  <!-- Begin Recently Viewed Products -->
+  <script type="text/javascript" charset="utf-8">
+    //<![CDATA[
+    // Including api.jquery.js conditionnally.
+    if (typeof Shopify.resizeImage === 'undefined') {
+      document.write("\u003cscript src=\"\/\/fridaskart.is\/cdn\/shopifycloud\/storefront\/assets\/themes_support\/api.jquery-7ab1a3a4.js\" type=\"text\/javascript\"\u003e\u003c\/script\u003e");
+    }
+    //]]>
+  </script>
+
+  <script src="//ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js" type="text/javascript"></script>
+  <script src="//fridaskart.is/cdn/shop/t/2/assets/jquery.products.min.js?v=69449650225931047071566303940" type="text/javascript"></script>
+
+  <!-- Facebook Widget -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=127142210767229";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <!-- Ajax Cart -->
+  <script src="//fridaskart.is/cdn/shop/t/2/assets/handlebars.min.js?v=79044469952368397291566303939" type="text/javascript"></script>
+  <!-- /snippets/ajax-cart-template.liquid -->
+
+  <script id="CartTemplate" type="text/template">
+
+  
+    <form action="/cart" method="post" novalidate class="cart ajaxcart">
+      <div class="ajaxcart__inner">
+        {{#items}}
+        <div class="ajaxcart__product">
+          <div class="ajaxcart row" data-line="{{line}}">
+
+            <div class="grid__item desktop-5 tablet-2 mobile-3 item_img">
+                <a href="{{url}}" class="ajaxcart__product-image">
+                  <img src="{{img}}" alt=""></a>
+                </a>
+            </div>
+
+              <div class="desktop-7 tablet-4 mobile-3">
+                <div class="item_dtl">
+                  <p>
+                    <a href="{{url}}" class="ajaxcart__product-name"><b>{{name}}</b></a>
+                    {{#if variation}}
+                      <p class="ajaxcart__product-meta">{{variation}}</p>
+                    {{/if}}
+                    {{#properties}}
+                      {{#each this}}
+                        {{#if this}}
+                          <span class="ajaxcart__product-meta">{{@key}}: {{this}}</span>
+                        {{/if}}
+                      {{/each}}
+                    {{/properties}}
+                    
+                  </p>
+                  <div class="pricing">
+                    <h5>
+                      {{#if discountsApplied}}
+                        <span class="visually-hidden">Sale</span>
+                        <span class="ajaxcart__price onsale"><span class="money">{{{discountedPrice}}}</span></span>
+                        <span class="visually-hidden">Regular</span>
+                        <del class="ajaxcart__price"><span class="money">{{{price}}}</span></del>
+                      {{else}}
+                        <span class="ajaxcart__price"><span class="money">{{{price}}}</span></span>
+                      {{/if}}
+                    </h5>
+
+                    {{#if discountsApplied}}
+                      {{#each discounts}}
+                        <h5 class="onsale"><i class="la la-tag"></i> {{ this.discount_application.title }} (-<span class="money">{{{ this.formattedAmount }}}</span>)</h5>
+                      {{/each}}
+                    {{/if}}
+                  </div>
+                </div>
+                <div class="ajaxcart__qty">
+                  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus quantity-increment" data-id="{{id}}" data-qty="{{itemMinus}}" data-line="{{line}}">
+                    <span>&minus;</span>
+                  </button>
+                  <input type="text" name="updates[]" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{id}}" data-line="{{line}}" aria-label="quantity" pattern="[0-9]*">
+                  <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus quantity-increment" data-id="{{id}}" data-line="{{line}}" data-qty="{{itemAdd}}">
+                    <span>+</span>
+                  </button>
+                </div>
+              </div>
+
+          </div>
+        </div>
+        {{/items}}
+
+        <div class="rte-accordion row">
+          
+            <div id="cart-notes" class="item">
+              <input class="trigger" id="item-one" type="checkbox" name="items" />
+              <label class="accordion-label" for="item-one"><span class="item-heading">Order Special Instructions</span></label>
+              <div class="item-content">
+                <textarea name="note" id="note" rows="5" cols="60">{{note}}</textarea>
+              </div>
+            </div>
+          
+        </div>
+
+      </div>
+      <div class="ajaxcart__footer row">
+        <div class="subtotal">
+          <p class="title">Subtotal</p>
+          <p class="subtotal-price"><span class="cart-original-total money">{{{subTotalPrice}}}</span></p>
+        </div>
+        
+          <div class="tax">
+            <p class="title">Tax</p>
+            <p class="value">Calculated at checkout</p>
+          </div>
+        
+        
+          <div class="shipping">
+            <p class="title">Shipping</p>
+            <p class="value">Calculated at checkout</p>
+          </div>
+        
+        <div class="discounts">
+          {{#if cartDiscountsApplied}}
+            <p>Discounts</p>
+            <ul>
+             {{#each cartDiscounts}}
+                <li><i class="la la-tag"></i> (-<span class="money">{{{ this.formattedAmount }}}</span>)</li>
+             {{/each}}
+            </ul>
+           {{/if}}
+           {{#if cartTotalSavings}}
+             <div class="cart_savings onsale">
+               <p><em>Total Savings</em></p>
+               <p class="cart-savings-amount"><em><span class="money">{{cartTotalDiscounts}}</span></em></p>
+             </div>
+           {{/if}}
+        </div>
+        <div class="total">
+          <h3 class="title">Total</h3>
+          <h3 class="total-price"><span class="cart-original-total money">{{totalPrice}}</span>
+          <span class="cart-total"></span></h3>
+        </div>
+
+        <button type="submit" class="cart__checkout" name="checkout">
+          Check Out &rarr;
+        </button>
+        
+      </div>
+    </form>
+  
+  </script>
+  <script id="AjaxQty" type="text/template">
+  
+    <div class="ajaxcart__qty">
+      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="{{id}}" data-qty="{{itemMinus}}">
+        <span class="icon icon-minus" aria-hidden="true"></span>
+        <span class="fallback-text">&minus;</span>
+      </button>
+      <input type="text" class="ajaxcart__qty-num" value="{{itemQty}}" min="0" data-id="{{id}}" aria-label="quantity" pattern="[0-9]*">
+      <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="{{id}}" data-qty="{{itemAdd}}">
+        <span class="icon icon-plus" aria-hidden="true"></span>
+        <span class="fallback-text">+</span>
+      </button>
+    </div>
+  
+  </script>
+  <script id="JsQty" type="text/template">
+  
+    <div class="js-qty">
+      <button type="button" class="js-qty__adjust js-qty__adjust--minus quantity-increment" data-id="{{id}}" data-qty="{{itemMinus}}">
+        <span>&minus;</span>
+      </button>
+      <input type="text" class="js-qty__num" value="{{itemQty}}" min="1" data-id="{{id}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}" >
+      <button type="button" class="js-qty__adjust js-qty__adjust--plus quantity-increment" data-id="{{id}}" data-qty="{{itemAdd}}">
+        <span>+</span>
+      </button>
+    </div>
+  
+  </script>
+
+
+  
+    <script src="//fridaskart.is/cdn/shop/t/2/assets/ajax-cart.js?v=1022238760522097231566303953" type="text/javascript"></script>
+    <script>
+      jQuery(function($) {
+        ajaxCart.init({
+          formSelector: '[data-product-form]',
+          cartContainer: '#CartContainer',
+          addToCartSelector: '#AddToCart',
+          cartCountSelector: '.CartCount',
+          cartCostSelector: '.CartCost',
+          moneyFormat: "{{amount_no_decimals}} kr"
+        });
+        });
+        
+        jQuery('body').on('ajaxCart.afterCartLoad', function(evt, cart) {
+          // Bind to 'ajaxCart.afterCartLoad' to run any javascript after the cart has loaded in the DOM
+          timber.RightDrawer.open();
+        });
+        
+        
+        jQuery('body').on('ajaxCart.afterCartLoad', function(evt, cart) {
+          // Convert currency when ajaxcart opens
+          Currency.convertAll(shopCurrency, Currency.currentCurrency);
+        });
+        
+    </script>
+  
+
+  <!-- No JS -->
+  <script>
+    function loadJS(u) {
+        var r = document.getElementsByTagName("script")[0],
+            s = document.createElement("script");
+        s.src = u;
+        r.parentNode.insertBefore(s, r);
+    }
+  </script>
+  <script>
+      document.documentElement.className =
+         document.documentElement.className.replace("no-js","js");
+  </script>
+
+  <!-- Responsive Images -->
+  <script src="//fridaskart.is/cdn/shop/t/2/assets/ls.rias.min.js?v=14027706847819641431566303942" type="text/javascript"></script>
+  <script src="//fridaskart.is/cdn/shop/t/2/assets/ls.bgset.min.js?v=67534032352881377061566303942" type="text/javascript"></script>
+  <script src="//fridaskart.is/cdn/shop/t/2/assets/lazysizes.min.js?v=46843600303590072821566303940" type="text/javascript"></script>
+
+  <script>
+    if (!window.HTMLPictureElement) {
+      loadJS("https://afarkas.github.io/lazysizes/plugins/respimg/ls.respimg.min.js");
+    }
+  </script>
+
+  <!-- JS Variable Helpers -->
+  <script>
+      var template = "index";
+  </script>
+
+  <!-- Fancybox JS -->
+  <script src="//fridaskart.is/cdn/shop/t/2/assets/jquery.fancybox.js?v=78048459142694200981566303940" type="text/javascript"></script>
+
+<script src="https://cdn.shopify.com/storefront/standard-actions.js" type="module" data-source-attribution="shopify.standard_actions"></script>
+</body>
+</html>
