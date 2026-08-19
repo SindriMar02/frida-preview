@@ -1,3 +1,8 @@
+import { sndrCredit } from '../../_tools/sndr-credit.mjs';
+
+/* one definition of the credit and the disclaimer, shared by every build */
+const CREDIT = sndrCredit({ nefnifall: 'Fríða skartgripir', eignarfall: 'Fríðu skartgripa' });
+
 // FRÍÐA skartgripir — all copy, is + en.
 // Every source, date, find-site and price below is lifted verbatim from
 // fridaskart.is (Shopify products.json + pages, read 2026-08-11).
@@ -260,8 +265,7 @@ export const COPY = {
     },
     footer: {
       lines: ['Fríða skartgripir', 'Skólavörðustígur 18, 101 Reykjavík', 'Sími 565 5454'],
-      credit: 'Hugmynd að endurhönnun. SNDR Studio.',
-      note: 'Óopinber hugmyndavinna, ekki í eigu eða á vegum Fríðu skartgripa.',
+      ...CREDIT.is,
     },
   },
 
@@ -334,8 +338,7 @@ export const COPY = {
     },
     footer: {
       lines: ['Fríða jewellery', 'Skólavörðustígur 18, 101 Reykjavík', 'Telephone 565 5454'],
-      credit: 'Redesign concept. SNDR Studio.',
-      note: 'An unofficial concept, not owned by or affiliated with Fríða skartgripir.',
+      ...CREDIT.en,
     },
   },
 };
